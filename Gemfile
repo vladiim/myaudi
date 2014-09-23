@@ -8,6 +8,7 @@ gem 'oj', '~> 2.10.2'
 
 # Project requirements
 gem 'rake', '~> 10.3.2'
+gem 'padrino-warden'
 
 # Component requirements
 gem 'bcrypt'
