@@ -9,7 +9,7 @@ module Myaudi
     enable :sessions
 
     get '/' do
-      authorize! '/sessions/login'
+      auth
       render 'layouts/home'
     end
 
@@ -20,11 +20,24 @@ module Myaudi
 
       def authenticate!
         user = User.authenticate(params["username"], params["password"])
-        user.nil? ? fail!("Could not log in") : success!(user)
+        # user ? success!(user) : fail!("Could not log in")
+        if user
+          success user
+        else
+          # require 'debugger'; debugger
+          # fail!("Could not log in")
+          redirect! '/sessions/fail'
+        end
+        true
       end
     end
 
     Warden::Manager.serialize_into_session { |user| user.id }
     Warden::Manager.serialize_from_session { |id| User.get(id) }
+
+    private
+    def auth
+      authorize! '/sessions/login'
+    end
   end
 end

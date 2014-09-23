@@ -1,0 +1,6 @@
+%hr
+
+= form_tag '/sessions/login', method: 'post', role: 'form' do
+  .form-group= text_field_tag :username, class: 'form-control', placeholder: 'Username'
+  .form-group= password_field_tag :password, class: 'form-control', placeholder: 'Password'
+  = submit_tag "Login", class: 'btn btn-large btn-primary'
