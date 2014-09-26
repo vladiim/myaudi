@@ -33,7 +33,7 @@ module Myaudi
 
     private
     def auth
-      authorize! '/sessions/login'
+      authorize!('/sessions/login') if Padrino.env == :production
     end
   end
 end

@@ -69,42 +69,43 @@
         -# ==========================================================================
 
         = stylesheet_link_tag 'bootstrap.min.css'
+        = stylesheet_link_tag 'main.css'
         / %link{:rel => "stylesheet", :href => "/css/base.css"}
-        -# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
+        /# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
 
-        -# IE Fixes
-        -# ==========================================================================
+        /# IE Fixes
+        /# ==========================================================================
 
-        -#
-        -# Use HTML5 Shim polyfill if not using Modernizr
-        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        -#
+        /#
+        /# Use HTML5 Shim polyfill if not using Modernizr
+        /# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
+        /# nicolasgallagher.com/mobile-first-css-sass-and-ie/
+        /#
 
-        -# /[if (lt IE 9) & (!IEMobile)]
-            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-            %script{:src => "/js/libs/selectivizr.min.js"}
-            -# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
-            -# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
+        /# /[if (lt IE 9) & (!IEMobile)]
+        /   -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+        /   %script{:src => "/js/libs/selectivizr.min.js"}
+        /   -# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
+        /   -# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
 
-        -# [if (lt IE 8) & (!IEMobile)]
-            %link{:rel => "stylesheet", :href => "/css/ie7.css"}
+        /# [if (lt IE 8) & (!IEMobile)]
+        /   %link{:rel => "stylesheet", :href => "/css/ie7.css"}
 
-        -# [if IE 6 & (!IEMobile)]
-            %link{:rel => "stylesheet", :href => "/css/ie6.css"}
+        /# [if IE 6 & (!IEMobile)]
+        /   %link{:rel => "stylesheet", :href => "/css/ie6.css"}
 
-        -# JS
-        -# ==========================================================================
+        /# JS
+        /# ==========================================================================
 
-        -# Typekit - change XXXXXXX to be your site's Typekit Kit ID
+        /# Typekit - change XXXXXXX to be your site's Typekit Kit ID
 
-        -# %script{:src => "http://use.typekit.com/XXXXXXX.js"}
-        -# :javascript
-            try{Typekit.load();}catch(e){}
+        /# %script{:src => "http://use.typekit.com/XXXXXXX.js"}
+        /# :javascript
+        /   try{Typekit.load();}catch(e){}
 
-        -# Modernizr
+        /# Modernizr
 
-        -# %script{:src => "/js/libs/modernizr.custom.js"}
+        /# %script{:src => "/js/libs/modernizr.custom.js"}
 
     %body
 
@@ -114,14 +115,16 @@
 
         = partial 'shared/nav'
 
-        .container
+        #main.container
 
             = yield
 
-        -# JS
-        -# ==========================================================================
 
-        -# jQuery
+        = partial 'shared/footer'
+        /# JS
+        /# ==========================================================================
+
+        /# jQuery
 
         = javascript_include_tag 'jquery.js'
 
@@ -131,8 +134,11 @@
 
 
         / Bootstrap
-        = javascript_include_tag 'bootstrap.min.js'
+        = javascript_include_tag 'ondomready.js'
+        = javascript_include_tag 'polyfills.js'
+        = javascript_include_tag 'augment.js'
         = javascript_include_tag 'holder.js'
+        = javascript_include_tag 'bootstrap.min.js'
 
         -# Custom JS
 

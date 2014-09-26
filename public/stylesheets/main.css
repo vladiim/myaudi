@@ -1,0 +1,18 @@
+#main {
+  margin-top: 60px;
+}
+
+.inline-input {
+  width: 60% !important;
+}
+
+.centre {
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
