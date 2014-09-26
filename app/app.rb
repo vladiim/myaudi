@@ -1,3 +1,7 @@
+require 'dotenv'
+
+Dotenv.load
+
 module Myaudi
   class App < Padrino::Application
     register CoffeeInitializer
@@ -20,15 +24,7 @@ module Myaudi
 
       def authenticate!
         user = User.authenticate(params["username"], params["password"])
-        # user ? success!(user) : fail!("Could not log in")
-        if user
-          success user
-        else
-          # require 'debugger'; debugger
-          # fail!("Could not log in")
-          redirect! '/sessions/fail'
-        end
-        true
+        user ? success!(user) : redirect!('/sessions/fail')
       end
     end
 

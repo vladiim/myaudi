@@ -1,12 +1,10 @@
 class User
   attr_accessor :id
   def self.authenticate(username, password)
+    return false unless test(username, password)
     user = self.new
-    if test(username, password)
-      user.id = 1
-      return user
-    end
-    false
+    user.id = 1
+    user
   end
 
   def self.get(id)
@@ -17,6 +15,6 @@ class User
 
   private
   def self.test(username, password)
-    username == 'test' && password == 'wh00t'
+    username == ENV['TEST_U'] && password == ENV['TEST_P']
   end
 end

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Server requirements
 gem 'thin', '~> 1.6.2'
 
@@ -21,15 +23,18 @@ gem 'sequel',        '~> 4.13.0'
 
 # Test requirements
 group :test do
-  gem 'rr',               '~> 1.1.2', :require => false
-  gem 'rspec',            '~> 3.0.0'
-  gem 'rack-test',        '~> 0.6.2', :require => 'rack/test'
-  gem 'capybara',         '~> 2.4.1'
-  gem 'launchy',          '~> 2.4.2'
+  gem 'rspec',     '~> 3.0.0'
+  gem 'rack-test', '~> 0.6.2', :require => 'rack/test'
+  gem 'capybara',  '~> 2.4.1'
+  gem 'launchy',   '~> 2.4.2'
 end
 
-# Development helper gems
-gem 'debugger', '~> 1.6.8'
+# Development/ test helper gems
+group :development, :test do
+  gem 'debugger', '~> 1.6.8'
+  gem 'dotenv', '~> 0.11.1'
+  gem 'pry',    '~> 0.10.1'
+end
 
 # Padrino Stable Gem
 gem 'padrino', '~> 0.12.3'
