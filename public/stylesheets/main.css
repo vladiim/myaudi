@@ -10,9 +10,47 @@
   text-align: center;
 }
 
+footer {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  border-top: solid 1px #e7e7e7;
+  background-color: #f8f8f8;
+}
+
 footer ul {
   list-style: none;
   display: inline-block;
   padding: 0;
   margin: 0;
+}
+
+span.old {
+  font-size: 80%;
+  font-weight: normal;
+  color: red;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.finance-calculator-form {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+}
+
+.finance-calculator-close {
+  top: 0;
+  position: fixed;
+}
+
+.finance-calculator-form ul {
+  margin-top: 20px;
 }

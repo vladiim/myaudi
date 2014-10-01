@@ -1,0 +1,56 @@
+%h2 Finance calculator
+%p We just need a few details
+
+%hr
+
+.container
+  .row
+    .span-sm-6
+      %h3 I'm interested in an <a class="finance-calculator" data-type="model" href="#">A1</span></a>, <a class="finance-calculator" data-type="variant" data-value="Sportsback" href="#">Sportsback</a>, I live in <a class="finance-calculator" data-type="suburb" href="#">2000</a>, I'm purchasing for <a class="finance-calculator" data-type="use" href="#">Personal</a> use, Estimate <a class="finance-calculator" data-type="interest" href="#">5</span></a>% interest, Over <a class="finance-calculator" data-type="years" href="#">4</span></a> years.
+
+    %hr
+
+    .span-sm-6
+      %h4 Estimate <span class="glyphicon glyphicon-info-sign"</span>
+      %h3 <span id='estimate-week-old' class='old'>$787.97</span> <span id='estimate-week'>$680</span> <small>per week</small>
+      %h3 <span id='estimate-total-old' class='old'>$50,000</span> <span id='estimate-total'>$43,000</span> <small>total</small>
+
+#model-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'model' } < Back
+  %h3 Change your model
+  %ul.list-group
+    - @models.each do |model, variants|
+      %li{ class: 'list-group-item finance-calculator-model-input', 'data-type' => 'model', 'data-value' => "#{ model }", 'data-variants' => "#{ variants }" }= model
+
+#variant-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back
+  %h3 Change your model variant
+  %ul.list-group
+
+#suburb-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'suburb' } < Back
+  %hr
+  %h3 Change your postcode
+  %input{ type: 'text', id: 'suburb-search', class: 'form-control', autofocus: 'true', autocomplete: 'off' }
+  %br
+  %button{ id: 'suburb-input-submit', class: 'btn btn-primary btn-large', type: 'button' } Save postcode
+
+#use-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back
+  %ul.list-group
+    %li{ class: 'list-group-item finance-calculator-use-input', 'data-type' => 'use', 'data-value' => 'Personal' } Personal
+    %li{ class: 'list-group-item finance-calculator-use-input', 'data-type' => 'use', 'data-value' => 'Business' } Business
+
+#interest-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back
+  %h3 Change your interest %
+  %ul.list-group
+    - 1.upto(10).each do |n|
+      %li{ class: 'list-group-item finance-calculator-interest-input', 'data-type' => 'interest', 'data-value' => "#{ n }" }= n
+
+#years-input.finance-calculator-form.hidden
+  %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back
+  %h3 Change your repayment years
+  %ul.list-group
+    - 1.upto(30).each do |n|
+      %li{ class: 'list-group-item finance-calculator-years-input', 'data-type' => 'years', 'data-value' => "#{ n }" }= n
