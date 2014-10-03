@@ -15,6 +15,14 @@
       %h3 <span id='estimate-week-old' class='old'>$787.97</span> <span id='estimate-week'>$680</span> <small>per week</small>
       %h3 <span id='estimate-total-old' class='old'>$50,000</span> <span id='estimate-total'>$43,000</span> <small>total</small>
 
+.cta-footer
+  .container
+    .row
+      .col-xs-6
+        %a{ href: '/finance/approval', class: 'btn btn-default' } Finance approval
+      .col-xs-6
+        %a{ href: '/book/test-drive', class: 'btn btn-primary' } Book a test drive
+
 #model-input.finance-calculator-form.hidden
   %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'model' } < Back
   %h3 Change your model
@@ -33,7 +41,7 @@
   %h3 Change your postcode
   %input{ type: 'text', id: 'suburb-search', class: 'form-control', autofocus: 'true', autocomplete: 'off' }
   %br
-  %button{ id: 'suburb-input-submit', class: 'btn btn-primary btn-large', type: 'button' } Save postcode
+  %button{ id: 'suburb-input-submit', class: 'btn btn-primary btn-large', type: 'button', 'data-type' => 'suburb' } Save postcode
 
 #use-input.finance-calculator-form.hidden
   %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back

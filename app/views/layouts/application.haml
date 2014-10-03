@@ -69,6 +69,7 @@
         -# ==========================================================================
 
         = stylesheet_link_tag 'bootstrap.min.css'
+        = stylesheet_link_tag 'responsive-calendar.css'
         = stylesheet_link_tag 'main.css'
         / %link{:rel => "stylesheet", :href => "/css/base.css"}
         /# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
@@ -141,20 +142,10 @@
         = javascript_include_tag 'bootstrap.min.js'
         = javascript_include_tag 'underscore.js'
         = javascript_include_tag 'typeahead.js'
+
+        / Bootstrap
+        = javascript_include_tag 'responsive-calendar.js'
+
+        /# Custom JS
         = javascript_include_tag 'finance.js'
-
-        -# Custom JS
-
-        -# %script{:src => "/js/app.js"}
-
-        -#
-        -# Asynchronous Google Analytics
-        -# Change UA-XXXXX-X to be your site's ID
-        -# mathiasbynens.be/notes/async-analytics-snippet
-        -#
-
-        -# :javascript
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+        = javascript_include_tag 'book.js'

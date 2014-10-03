@@ -1,11 +1,14 @@
 #main {
-  margin-top: 60px; }
+  margin-top: 60px;
+}
 
 .inline-input {
-  width: 60% !important; }
+  width: 60% !important;
+}
 
 .centre {
-  text-align: center; }
+  text-align: center;
+}
 
 footer {
   right: 0;
@@ -13,20 +16,23 @@ footer {
   bottom: 0;
   display: block;
   border-top: solid 1px #e7e7e7;
-  background-color: #f8f8f8; }
+  background-color: #f8f8f8;
+}
 
 footer ul {
   list-style: none;
   display: inline-block;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 span.old {
   font-size: 80%;
   font-weight: normal;
   color: red;
   font-style: italic;
-  text-decoration: line-through; }
+  text-decoration: line-through;
+}
 
 .finance-calculator-form {
   top: 0;
@@ -37,21 +43,24 @@ span.old {
   width: 100%;
   height: 100%;
   background-color: white;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .finance-calculator-close {
   top: 0;
-  position: fixed; }
+  position: fixed;
+}
 
 .finance-calculator-form ul {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 .cta-footer {
   background-color: white;
-  margin: 20px; }
+  margin: 20px;
+}
 
 .cta-footer .container {
   padding: 0;
-  margin-left: -20px; }
-
-/*# sourceMappingURL=main.css.map */
+  margin-left: -20px;
+}

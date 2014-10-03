@@ -12,6 +12,10 @@ module Myaudi
 
     enable :sessions
 
+    configure do
+      set :days, %w( Mon Tue Wed Thur Fri Sat Sun )
+    end
+
     get '/' do
       auth
       render 'layouts/home'
