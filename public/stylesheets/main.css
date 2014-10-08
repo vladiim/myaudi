@@ -14,12 +14,11 @@ footer {
   display: block;
   border-top: solid 1px #e7e7e7;
   background-color: #f8f8f8; }
-
-footer ul {
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin: 0; }
+  footer ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0; }
 
 span.old {
   font-size: 80%;
@@ -28,7 +27,7 @@ span.old {
   font-style: italic;
   text-decoration: line-through; }
 
-.finance-calculator-form {
+.finance-calculator-form, #time-form, #details-form, #finalise-booking {
   top: 0;
   left: 0;
   right: 0;
@@ -53,5 +52,26 @@ span.old {
 .cta-footer .container {
   padding: 0;
   margin-left: -20px; }
+
+.responsive-calendar .day .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 1; }
+
+.short-profile li {
+  margin-left: -20px; }
+.short-profile a {
+  width: 100%; }
+
+.time-input {
+  width: 100%;
+  padding: 5px;
+  text-align: left;
+  list-style: none; }
+
+.btn-100 {
+  width: 100%;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -86,7 +86,6 @@ $(document).ready ->
       source: data
       items: 15
 
-
   $("#suburb-input-submit").on "click", (event) ->
     event.preventDefault()
     target = $(event.target)

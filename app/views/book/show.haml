@@ -1,3 +1,11 @@
+%ul{ class: 'nav nav-tabs', role: 'tablist' }
+  %li{ class: 'active' }
+    %a 1. Date
+  %li
+    %a 2. Time
+  %li
+    %a 3. Details
+
 %h2 Make a booking
 
 .container
@@ -33,3 +41,93 @@
         %div{ class: 'day header' }= day
 
     %div{ class: 'days', 'data-group' => 'days' }
+
+#time-form.hidden
+  .container
+    %ul{ class: 'nav nav-tabs', role: 'tablist' }
+      %li
+        %a 1. Date
+      %li{ class: 'active' }
+        %a 2. Time
+      %li
+        %a 3. Details
+
+    %h3 Booking time
+    %h4
+      2 dealers available on
+      %span#full-date
+      at
+      %a{ href: '/', class: 'hour' } 09
+      %span :
+      %a{ href: '/', class: 'minute' } 00
+    %hr
+    - 2.times do
+      .row.short-profile
+        .col-xs-3
+          %img{ 'data-src' => 'holder.js/50x50/sky/auto', class: 'img-circle' }
+        .col-xs-9
+          %h4 John Smith
+          %ul
+            %li Lorem ipsum dolor sit amet
+            %li Consectetur adipisicing elit
+            %li Sed do eiusmod tempor.
+        %a{ href: '#', class: 'btn btn-default details' } Book with John
+      %hr
+
+#details-form.hidden
+  .container
+    %ul{ class: 'nav nav-tabs', role: 'tablist' }
+      %li
+        %a 1. Date
+      %li
+        %a 2. Time
+      %li{ class: 'active' }
+        %a 3. Details
+
+    %h3 Add your details
+    %a{ class: 'btn btn-default btn-100' } Add with LinkedIn
+    %a{ class: 'btn btn-default btn-100' } Add with Facebook
+
+    %form{ role: 'form' }
+      .form-group
+        %label Name
+        %input{ type: 'text', class: 'form-control', placeholder: 'Name' }
+      .form-group
+        %label Surname
+        %input{ type: 'text', class: 'form-control', placeholder: 'Surname' }
+      .form-group
+        %label Email
+        %input{ type: 'email', class: 'form-control', placeholder: 'Email' }
+      .form-group
+        %label Phone number
+        %input{ type: 'number', class: 'form-control' }
+      .checkbox
+        %label
+          %input{ type: 'checkbox' } Subscribe to Audi updates
+      %button{ type: 'submit', class: 'btn btn-primary finalise-booking' } Finalise booking
+
+#finalise-booking.hidden
+  .container
+    %h3 Thanks for your booking
+    %p You'll receive a phone call confirming all the details.
+
+    %h4 Booking details
+    %ul
+      %li Test drive
+      %li
+        %a Audi Sydney
+      %li For an A3 Sportsback
+      %li On the 25th October 2014
+      %li At 9:00am
+      %li
+        With
+        %a John Smith
+
+    %h4 Your details
+    %ul
+      %li Mark Long
+      %li mark.long@gmail.com
+      %li 044449898
+
+    %h4 Why not look at
+    = partial 'articles/item'

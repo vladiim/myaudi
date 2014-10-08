@@ -1,11 +1,5 @@
 - 6.times do
-  .media.col-sm-6
-    %small 5 hours ago
-    %a{ class: 'pull-left', href: '/articles/1' }
-      %img{ class: 'media-object', 'data-src' => 'holder.js/100x100/' }
-    .media-body
-      %h4.media-heading Audi sculpts the S8 into art
-      %p A bronze sculpture commemorates the S8 launch <a href="/articles/1">...more</a>
+  = partial 'articles/item'
 
 %hr
 
