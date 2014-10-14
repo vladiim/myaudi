@@ -1,0 +1,10 @@
+.hero
+  %h1= "Trent's #{ @model.upcase }"
+  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
+
+%ul.list-group
+  - @grades.each do |grade|
+    %li.list-group-item
+      %a{ href: "/grades/#{ StringHelper.url(grade) }" }
+        = grade
+        %span.pull-right >

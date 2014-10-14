@@ -1,0 +1,27 @@
+%ul{ class: 'nav nav-tabs nav-car', role: 'tablist' }
+  %li.active
+    %a{ href: '#grade', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 A-
+      %small grade
+  %li
+    %a{ href: '#place', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 22
+      %small place
+  %li
+    %a{ href: '#trips', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 200
+      %small trips
+  %li
+    %a{ href: '#services', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 12
+      %small services
+
+.tab-content
+  %div{ class: 'tab-pane active', id: 'grade' }
+    = partial '/cars/grade'
+  .tab-pane#place
+    = partial '/cars/place'
+  .tab-pane#trips
+    = partial '/cars/trips'
+  .tab-pane#services
+    = partial '/cars/services'

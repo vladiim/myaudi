@@ -7,5 +7,4 @@ Myaudi::App.controllers :articles do
   get :show, map: 'articles/:id' do
     render 'articles/show'
   end
-
 end

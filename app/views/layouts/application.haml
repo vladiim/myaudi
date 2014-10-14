@@ -68,6 +68,9 @@
         -# CSS
         -# ==========================================================================
 
+        /%link{ href: 'https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css', rel: 'stylesheet'}
+        = stylesheet_link_tag 'mapbox.css'
+
         = stylesheet_link_tag 'bootstrap.min.css'
         = stylesheet_link_tag 'responsive-calendar.css'
         = stylesheet_link_tag 'main.css'
@@ -149,7 +152,13 @@
         / Underscore
         = javascript_include_tag 'underscore.js'
 
+        /# Mapbox
+        / %script{ src: 'https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js' }
+        = javascript_include_tag 'mapbox.js'
+
         /# Custom JS
         = javascript_include_tag 'finance.js'
         = javascript_include_tag 'book.js'
+        = javascript_include_tag 'trip.js'
+        = javascript_include_tag 'map.js'
         = javascript_include_tag 'main.js'

@@ -10,28 +10,35 @@
 
     %div{ class: 'collapse navbar-collapse', id: 'navbar-collapse' }
       %ul{ class: 'nav navbar-nav' }
-        %li
-          %a{ href: '/articles' } Articles
-        %li
-          %a{ href: '/book/test-drive' } Book
-        %li
-          %a{ href: '/finance' } Finance
+        - if env['warden'].user
+          %li
+            %a{ href: '/cars/rs4' } My RS4
+        - else
+          %li
+            %a{ href: '/articles' } Articles
         %li.dropdown
-          %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' } Dropdown<span class='caret'></span>
+          %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' } Book<span class='caret'></span>
           %ul{ class: 'dropdown-menu', role: 'menu' }
             %li
-              %a{ href: '#' } Link
+              %a{ href: '/book/test-drive' } Test drive
             %li
-              %a{ href: '#' } Link
+              %a{ href: '/book/service' } Service
             %li
-              %a{ href: '#' } Link
+              %a{ href: '/book/event' } Event
+        %li
+          %a{ href: '/finance' } Finance
+
       %ul{ class: 'nav navbar-nav navbar-right' }
         %form{ class: 'navbar-form navbar-left', role: 'search' }
           .form-group
             %input{ type: 'text', class: 'form-control', placeholder: 'Search' }
             %button{ type: 'submit', class: 'btn btn-default' } Go
-        %li
-          %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
+        - if env['warden'].user
+          %li
+            %a{ href: '/logout' } Logout
+        - else
+          %li
+            %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog
@@ -46,15 +53,20 @@
           .col-md-6
             %h4 Login
             %br
-            %form
-              .form-group
-                %label{ for: 'email' } Email
-                %input{ type: 'email', class: 'form-control', placeholder: 'Enter email'}
-              .form-group
-                %label{ for: 'password' } Password
-                %input{ type: 'password', class: 'form-control', placeholder: 'Enter password'}
-            %a{ href: '/login', class: 'btn btn-primary' } Login
-            %a{ href: '/forgot-password' } Forgot password
+
+            = form_tag '/sessions/create' do
+              = field_set_tag do
+                .form-group
+                  = label_tag :email, for: 'email'
+                  = email_field_tag :email, class: 'form-control', placeholder: 'Enter email'
+                .form-group
+                  = label_tag :password, for: 'password'
+                  = password_field_tag :password, class: 'form-control', placeholder: 'Enter password'
+              = field_set_tag( class: 'buttons' ) do
+                = submit_tag "Login", class: 'btn btn-primary'
+              %a{ href: '/forgot-password' } Forgot password?
+
+          %hr
 
           .col-md-6
             %h4 Sign up
@@ -66,15 +78,15 @@
               .form-group
                 %label{ for: 'password' } Password
                 %input{ type: 'password', class: 'form-control', placeholder: 'Enter password'}
+              .form-group
+                %label{ for: 'password' } Confirm password
+                %input{ type: 'password', class: 'form-control', placeholder: 'Confirm password'}
               .checkbox
                 %label
                   %input{ type: 'checkbox' } I agree to Audi's <a href="/privacy">privacy policy <i><small>(no spam)</small></i></a>
               .checkbox
                 %label
                   %input{ type: 'checkbox' } I'm happy to receive emails from Audi
-              .form-group
-                %label{ for: 'password' } Confirm password
-                %input{ type: 'password', class: 'form-control', placeholder: 'Confirm password'}
             %a{ href: '/signup', class: 'btn btn-primary' } Sign up
 
       .modal-footer

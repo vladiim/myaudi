@@ -74,4 +74,31 @@ span.old {
   width: 100%;
   margin-bottom: 10px; }
 
+.modal-body .checkbox input {
+  margin-left: 0; }
+.modal-body .checkbox span {
+  margin-left: 20px; }
+
+.nav-car {
+  text-align: center; }
+  .nav-car h4 {
+    margin-bottom: -5px; }
+  .nav-car li > a {
+    padding: 5px 15px; }
+
+.list-group-item span.place {
+  font-size: 300%;
+  font-weight: bold; }
+
+.trips-marker {
+  margin-top: -70px; }
+  .trips-marker .glyphicon-map-marker {
+    font-size: 200%;
+    margin-left: -30px; }
+
+#map {
+  position: absolute;
+  width: 100%;
+  height: 200px; }
+
 /*# sourceMappingURL=main.css.map */

@@ -18,7 +18,13 @@ module Myaudi
 
     get '/' do
       auth
-      render 'layouts/home'
+      @user = env['warden'].user
+
+      if @user
+        render 'layouts/home_loggedin'
+      else
+        render 'layouts/home'
+      end
     end
 
     Warden::Strategies.add(:password) do

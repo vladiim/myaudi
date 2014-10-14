@@ -1,0 +1,18 @@
+%h1 200 trips
+
+%p
+  Order by
+  %a most recent
+
+%ul.list-group
+  - @trips.each do |trip|
+    %li.list-group-item.trip-item
+      .row
+        .col-xs-11
+          %small= trip.date
+          %h5= "#{ trip.from } to #{ trip.to }"
+          %p= "#{ trip.grade } | #{ trip.distance }km | #{ trip.time } mins"
+        .col-xs-1.pull-right.trips-marker
+          .glyphicon.glyphicon-map-marker
+
+%a{ class: 'btn btn-primary btn-100' } Load more
