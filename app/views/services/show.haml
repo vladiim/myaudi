@@ -1,0 +1,57 @@
+%a{ href: '/cars/rs4' }
+
+%h3 Basic service
+
+%p
+  9am, 12th Oct 2014 at
+  %a Audi Sydney
+  ='.'
+
+.row.mechanic
+  .col-xs-2
+    %img{ 'data-src' => 'holder.js/50x50/sky', class: 'img-circle' }
+  .col-xs-4
+    %h5
+      %a Dave Foobar
+    %small Mechanic
+  .col-xs-4
+    - 3.times do
+      %span.glyphicon.glyphicon-star
+
+%hr
+
+%h4 Work complete
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Work done
+      %th Cost
+  %tbody
+    %tr
+      %td Replace tires X 4
+      %td $545.00
+    %tr
+      %td Oil change
+      %td $230.00
+    %tr
+      %td Replace fan belt
+      %td $100.00
+    %tr
+      %td
+        %b Total
+      %td
+        %b $875.00
+
+%hr
+
+%h4 Questions
+
+%form{ class: 'form form-question', role: 'form' }
+  %textarea{ type: 'text', class: 'form-control', placeholder: 'Ask your mechanic a question', rows: '3' }
+  %submit{ id: 'service-question', href: '#', class: 'btn btn-primary btn-100' } Ask
+
+#question-form-thanks.hidden
+  %h5 Thanks for your question. Someone will be back with a response soon
+
+%blockquote#show-question.hidden

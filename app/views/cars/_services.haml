@@ -1,1 +1,18 @@
-%h1 services
+%h3 12 Services
+
+%p
+  Your RS4 has a
+  %a{ href: '#' } $94,990
+  resale value, as all your services have been with Audi and your car is
+  %a{ href: '#' } Audi Approved
+  = "."
+
+%hr
+
+.list-group
+  - @service = OpenStruct.new(name: 'Basic service', items: '3', cost: '$849.00', date: '12th Oct 2014')
+  - 10.times do
+    %a{ class: 'list-group-item', href: '/services/2014/10/12' }
+      %small= @service.date
+      %h4= @service.name
+      %p= "#{ @service.items } items | #{ @service.cost }"
