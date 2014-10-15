@@ -1,0 +1,18 @@
+.container
+  .row
+    .span-sm-6
+      %p
+        I'd like to book a 
+        %a{ href: '/' }= @type
+        , at
+        %a{ href: '/' } Audi Sydney
+        , I'm interested in an 
+        %a{ href: '/' } A3
+        %a{ href: '/' } Sportsback.
+      %a{ href: '/' } + add car
+
+%hr
+
+= partial '/book/cal.haml'
+= partial '/book/details.haml'
+= partial '/book/finalise.haml'

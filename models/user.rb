@@ -1,5 +1,6 @@
 class User
-  attr_accessor :name, :surname, :email, :password, :id
+  attr_accessor :name, :surname, :email, :password, :id, :car,
+    :grade, :trips
 
   def self.get(id)
     users = User.new.users

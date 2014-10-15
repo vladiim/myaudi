@@ -75,7 +75,7 @@ finaliseBookingListener = ->
 
 toggleModal = ( id ) -> $( id ).toggleClass('hidden')
 
-$( document ).ready( ->
+$( document ).ready ->
   responsiveCal()
   window.setTimeout(dayListener, 1000)
   closeModalListener()
@@ -84,4 +84,3 @@ $( document ).ready( ->
   timeListener()
   detailsCTAListener()
   finaliseBookingListener()
-)

@@ -1,0 +1,55 @@
+.container
+  .responsive-calendar
+    .controls
+      %a{ class: 'pull-left', 'data-go' => 'prev' }
+        %div{ class: 'btn btn-default' }
+          %span{ class: 'glyphicon glyphicon-step-backward' }
+      %h4
+        %span{ 'data-head-year' => 'true' }
+        %span{ 'data-head-month' => 'true' }
+      %a{ class: 'pull-right', 'data-go' => 'next' }
+        %div{ class: 'btn btn-default' }
+          %span{ class: 'glyphicon glyphicon-step-forward' }
+    %hr
+    .day-headers
+      - @days.each do |day|
+        %div{ class: 'day header' }= day
+
+    %div{ class: 'days', 'data-group' => 'days' }
+
+#time-form.hidden
+  .container
+    %ul{ class: 'nav nav-tabs', role: 'tablist' }
+      %li
+        %a 1. Date
+      %li{ class: 'active' }
+        %a 2. Time
+      %li
+        %a 3. Details
+
+    %h3 Booking time
+    %h4
+      2
+      - if @type == 'Service'
+        mechanics
+      - else
+        dealers
+      available on
+      %span#full-date
+      at
+      %a{ href: '/', class: 'hour' } 09
+      %span :
+      %a{ href: '/', class: 'minute' } 00
+    %hr
+    - 2.times do
+      .row.short-profile
+        .col-xs-3
+          %img{ 'data-src' => 'holder.js/50x50/sky/auto', class: 'img-circle' }
+        .col-xs-9
+          %h4 John Smith
+          %ul
+            %li Lorem ipsum dolor sit amet
+            %li Consectetur adipisicing elit
+            %li Sed do eiusmod tempor.
+        %a{ href: '#', class: 'btn btn-default details' } Book with John
+      %hr

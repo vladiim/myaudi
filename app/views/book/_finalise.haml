@@ -1,0 +1,34 @@
+#finalise-booking.hidden
+  .container
+    %h3 Thanks for your booking
+    %p You'll receive a phone call confirming all the details.
+
+    %h4 Booking details
+    %ul
+      %li
+      - if @type == 'Service'
+        Service
+      - else
+        Test drive
+      %li
+        %a Audi Sydney
+      %li For 
+      - if @type == 'Service'
+        your RS4
+      - else
+        an A3 Sportsback
+      %li On the 25th October 2014
+      %li At 9:00am
+      %li
+        With
+        %a John Smith
+
+    %h4 Your details
+    %ul
+      %li Mark Long
+      %li mark.long@gmail.com
+      %li 044449898
+  %a{ href: '#', class: 'btn btn-default btn-100' } Edit booking
+
+  %h4 Why not look at
+  = partial 'articles/item'

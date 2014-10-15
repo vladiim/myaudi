@@ -1,0 +1,31 @@
+#details-form.hidden
+  .container
+    %ul{ class: 'nav nav-tabs', role: 'tablist' }
+      %li
+        %a 1. Date
+      %li
+        %a 2. Time
+      %li{ class: 'active' }
+        %a 3. Details
+
+    %h3 Add your details
+    %a{ class: 'btn btn-default btn-100' } Add with LinkedIn
+    %a{ class: 'btn btn-default btn-100' } Add with Facebook
+
+    %form{ role: 'form' }
+      .form-group
+        %label Name
+        %input{ type: 'text', class: 'form-control', placeholder: 'Name' }
+      .form-group
+        %label Surname
+        %input{ type: 'text', class: 'form-control', placeholder: 'Surname' }
+      .form-group
+        %label Email
+        %input{ type: 'email', class: 'form-control', placeholder: 'Email' }
+      .form-group
+        %label Phone number
+        %input{ type: 'number', class: 'form-control' }
+      .checkbox
+        %label
+          %input{ type: 'checkbox' } Subscribe to Audi updates
+      %button{ type: 'submit', class: 'btn btn-primary finalise-booking' } Finalise booking
