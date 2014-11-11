@@ -22,7 +22,7 @@ class User
   end
 
   def users
-    [ trent ]
+    [ trent, mark ]
   end
 
   private
@@ -47,6 +47,17 @@ class User
     user.car = 'A5 Sportsback'
     user.grade = 'B+'
     user.trips = '200'
+    user
+  end
+
+  def mark
+    user = User.new
+    user.id = 3
+    user.name = "Mark"
+    user.surname = "Long"
+    user.email = ENV['MARK_E']
+    user.password = ENV['MARK_P']
+    user.car = 'A5 Sportsback'
     user
   end
 end

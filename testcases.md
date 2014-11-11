@@ -1,4 +1,4 @@
-# Finance
+# Buy
 
 * You're researching a zippy car to get you around the city whilst on the bus going to work
 
@@ -6,17 +6,27 @@
 
 > - Look for and A3 Sedan and estimate a 6% interest over 4 years
 
-* Apply for finance -> asks for phone number, thanks! someone will be in touch
+* Book a test drive
 
-***
+> Date
 
-# Buy
+> Pick dealer @ 9:00am
 
-* Book a test drive, pick dealer, fill in details
+> Fill in your details
+
+* Login (mark@email.com, password)
+
+> Check where you car is
 
 ***
 
 # Drive
+
+* Dependency: login
+
+> uname: trent@gmail.com
+
+> pword: password
 
 * You've just finished a trip to North Sydney from Redfern in your RS4
 
@@ -28,11 +38,17 @@
 
 # Service
 
+* Dependency: login
+
+> uname: trent@gmail.com
+
+> pword: password
+
 * You have a question about your last service
 
 > - Find your last service
 
-> - Ask the mechnic why all 4 tires needed to be replaced
+> - Ask the mechanic why all 4 tires needed to be replaced
 
 ***
 
@@ -42,6 +58,8 @@
 
 * Change profile details
 
+* Search for an article "blah blah"
+
 ***
 
 # Tech
@@ -49,3 +67,11 @@
 * Show validation
 
 * Add GA w/ GTM
+
+***
+
+# Admin
+
+* You want approve a draft post
+
+* 

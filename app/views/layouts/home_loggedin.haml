@@ -1,7 +1,14 @@
-.hero-car
+- if @user.id == 2
+  .hero-car
+    %h3
+      %a{ href: '/cars/rs4' } Trent's RS 4
+    %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
+    %span A-grade | 22nd | 200 trips | 12 services
+
+- elsif @user.id == 3
   %h3
-    %a{ href: '/cars/rs4' } Trent's RS 4
-  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
-  %span A-grade | 22nd | 200 trips | 12 services
+    %a{ href: '/cars/locator' } Mark's A4 Avant
+  %iframe{ width: '100%', height: '300px', frameBorder: '0', src: 'https://a.tiles.mapbox.com/v4/vladiim.k6j8ml0f/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmxhZGlpbSIsImEiOiJwdnVmSjFrIn0.jezrnSxoWV4AamZ1nI2z1g' }
+  %span Kassel Germany | 14,457 km | 2 months away
 
 = partial 'articles/list'
