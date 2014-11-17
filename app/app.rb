@@ -1,6 +1,7 @@
-require 'dotenv'
-
-Dotenv.load
+unless Padrino.env == :production
+  require 'dotenv'
+  Dotenv.load
+end
 
 module Myaudi
   class App < Padrino::Application
