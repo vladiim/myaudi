@@ -1,3 +1,17 @@
+.hero
+  %h1= "Trent's #{ @model.upcase }"
+  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
+
+%p
+  Your RS4 has a
+  %a{ href: '#' } $94,990
+  resale value, as all your services have been with Audi and your car is
+  %a{ href: '#' } Audi Approved
+  = "."
+  You still have
+  %a{ href: 'cars/rs4/warranty'} 2 years
+  on your warranty
+
 %ul{ class: 'nav nav-tabs nav-car', role: 'tablist' }
   %li.active
     %a{ href: '#grade', role: 'tab', 'data-toggle' => 'tab' }

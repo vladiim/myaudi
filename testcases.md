@@ -1,3 +1,25 @@
+# Notes
+
+* booking engine doesn't work
+
+* Add good content
+
+> events
+
+> car content
+
+> lifestyle content
+
+* Dealership pages
+
+> Lists details
+
+> Shows staff, mechanics/sales
+
+* Mechanic/sales details
+
+***
+
 # Buy
 
 * You're researching a zippy car to get you around the city whilst on the bus going to work
@@ -24,10 +46,6 @@
 
 * Dependency: login
 
-> uname: trent@gmail.com
-
-> pword: password
-
 * You've just finished a trip to North Sydney from Redfern in your RS4
 
 > - Check your overall grade for the trip
@@ -39,10 +57,6 @@
 # Service
 
 * Dependency: login
-
-> uname: trent@gmail.com
-
-> pword: password
 
 * You have a question about your last service
 
@@ -71,6 +85,8 @@
 ***
 
 # Admin
+
+* Dependency: login
 
 * You want approve a draft post
 

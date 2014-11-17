@@ -18,7 +18,7 @@ module Myaudi
 
     get '/' do
       auth
-      @user = env['warden'].user
+      @user = env['warden'].user || NullUser.new
 
       if @user
         render 'layouts/home_loggedin'

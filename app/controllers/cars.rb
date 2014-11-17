@@ -11,4 +11,8 @@ Myaudi::App.controllers :cars do
       render '/cars/show'
     end
   end
+
+  get '/cars/:model/warranty' do
+    render '/cars/warranty'
+  end
 end
