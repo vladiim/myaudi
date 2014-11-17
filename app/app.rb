@@ -42,6 +42,7 @@ module Myaudi
     Warden::Manager.serialize_from_session { |id| User.get(id) }
 
     private
+
     def auth
       authorize!('/sessions/login') if Padrino.env == :production
     end
