@@ -1,9 +1,11 @@
-- if @user.id == 2
+- if @user.trent?
   .hero-car
     %h3
       %a{ href: '/cars/rs4' } Trent's RS 4
     %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
     %span A-grade | 22nd | 200 trips | 12 services
+- if @user.admin?
+  %h3 Admin dashboard
 
 - elsif @user.id == 3
   %h3
