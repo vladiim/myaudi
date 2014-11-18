@@ -36,7 +36,7 @@ class User
   end
 
   def self.authenticate(username, password)
-    false unless username == admin.email && password == admin.password
+    true if username == admin.email && password == admin.password
   end
 
   def trent?
