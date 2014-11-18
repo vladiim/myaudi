@@ -1,6 +1,7 @@
 Myaudi::App.controllers :articles do
 
   get :index do
+    auth
     render 'articles/index'
   end
   
