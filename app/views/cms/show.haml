@@ -5,10 +5,16 @@
         .form-group
           %input{ value: "#{ content.name }", class: 'form-control', id: 'richText' }
           %br
-          %textarea{ class: 'form-control', rows: 20 }
+
+          - if content.type == 'Article'
+            %textarea{ class: 'form-control', rows: 20 }
+          - elsif content.type == 'User'
+            %h2 User content editor
+          - elsif content.type == 'Event'
+            %h2 Event content editor
 
     .col-xs-2.cms-actions
-      - [ 'info-sign', 'flag', 'save', 'comment' ].each do |action|
+      - [ 'info-sign', 'flag', 'save', 'comment', 'calendar' ].each do |action|
         %a{ href: '#', class: 'btn btn-default', id: "#{ action }-action" }
           %span{ class: "glyphicon glyphicon-#{ action }" }
 
