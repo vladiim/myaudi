@@ -6,6 +6,7 @@ Myaudi::App.controllers :articles do
   end
   
   get :show, map: 'articles/:id' do
+    auth
     render 'articles/show'
   end
 end

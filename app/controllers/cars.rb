@@ -1,5 +1,7 @@
 Myaudi::App.controllers :cars do
   get :show, map: '/cars/:model' do
+    auth
+
     @model = params[:model]
 
     if @model == 'locator'
@@ -13,6 +15,7 @@ Myaudi::App.controllers :cars do
   end
 
   get '/cars/:model/warranty' do
+    auth
     render '/cars/warranty'
   end
 end
