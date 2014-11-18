@@ -6,12 +6,12 @@
 
 require 'sinatra/base'
 
-if RACK_ENV.to_s == 'production'
+require File.expand_path("../config/boot.rb", __FILE__)
+
+if Padrino.env.to_s == 'production'
   use Rack::Auth::Basic, "Protected Area" do |username, password|
    username == ENV['ADMIN_E'] && password == ENV['ADMIN_P']
   end
 end
-
-require File.expand_path("../config/boot.rb", __FILE__)
 
 run Padrino.application
