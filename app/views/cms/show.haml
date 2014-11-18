@@ -3,7 +3,7 @@
     .col-xs-10
       %form{ role: 'form' }
         .form-group
-          %input{ value: "#{ content.name }", class: 'form-control' }
+          %input{ value: "#{ content.name }", class: 'form-control', id: 'richText' }
           %br
           %textarea{ class: 'form-control', rows: 20 }
 
@@ -13,4 +13,3 @@
           %span{ class: "glyphicon glyphicon-#{ action }" }
 
 %script{ src: '//tinymce.cachefly.net/4.1/tinymce.min.js' }
-%script tinymce.init({selector:'textarea',menubar: false,toolbar: ['undo redo | styleselect | bold italic underline | link image | hr | alignleft aligncenter alignright']});
