@@ -8,7 +8,7 @@
           %textarea{ class: 'form-control', rows: 20 }
 
     .col-xs-2.cms-actions
-      - [ 'info-sign', 'comment', 'save', 'flag' ].each do |action|
+      - [ 'info-sign', 'flag', 'save', 'comment' ].each do |action|
         %a{ href: '#', class: 'btn btn-default', id: "#{ action }-action" }
           %span{ class: "glyphicon glyphicon-#{ action }" }
 

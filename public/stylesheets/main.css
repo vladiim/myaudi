@@ -124,8 +124,11 @@ span.old {
   font-size: 1.2;
   margin-right: 10px; }
 
-.cms-actions a {
-  margin-bottom: 15px;
-  font-size: 1.5em; }
+.cms-actions {
+  position: fixed;
+  right: 15px; }
+  .cms-actions a {
+    margin-bottom: 15px;
+    font-size: 1.5em; }
 
 /*# sourceMappingURL=main.css.map */
