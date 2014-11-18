@@ -57,7 +57,7 @@ class User
 
   private
 
-  def admin
+  def self.admin
     user = User.new
     user.id = 1
     user.name = 'Test'
