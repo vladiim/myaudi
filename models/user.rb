@@ -36,7 +36,7 @@ class User
   end
 
   def self.authenticate(username, password)
-    admin if username == ENV['ADMIN_E'] && password == ENV['ADMIN_P']
+    null_user if username == ENV['ADMIN_E'] && password == ENV['ADMIN_P']
   end
 
   def trent?
@@ -57,13 +57,13 @@ class User
 
   private
 
-  def self.admin
-    user = User.new
-    user.id = 1
-    user.name = 'Test'
-    user.surname = "Tester"
-    user.email = ENV['ADMIN_E']
-    user.password = ENV['ADMIN_P']
+  def self.null_user
+    user = NullUser.new
+    # user.id = 1
+    # user.name = 'Test'
+    # user.surname = "Tester"
+    # user.email = ENV['ADMIN_E']
+    # user.password = ENV['ADMIN_P']
     user
   end
 
