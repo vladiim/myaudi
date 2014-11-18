@@ -17,6 +17,12 @@ module Myaudi
       set :days, %w( Mon Tue Wed Thur Fri Sat Sun )
     end
 
+    if Padrino.env == :production
+      use Rack::Auth::Basic, "Sign in to access the myAudi Prototype" do |username, password|
+        username == ENV['ADMIN_E'] && password == ENV['ADMIN_P']
+      end
+    end
+
     get '/' do
       auth
       @user = env['warden'].user || NullUser.new
@@ -45,7 +51,7 @@ module Myaudi
     private
 
     def auth
-      authorize!('/sessions/login') if Padrino.env == :production
+      # authorize!('/sessions/login') if Padrino.env == :production
     end
   end
 end
