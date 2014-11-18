@@ -1,6 +1,15 @@
 Myaudi::App.controllers :cms do
   get :index do
-    auth
-    render '/cms/index'
+    content_list = Content.list
+    render '/cms/index', locals: { content_list: content_list }
+  end
+
+  get :show, map: '/cms/:id/:name' do
+    content = Content.find(params[:id])
+    render '/cms/show', locals: { content: content }
+  end
+
+  get :new do
+    render '/cms/new'
   end
 end

@@ -18,34 +18,13 @@ module Myaudi
     end
 
     get '/' do
-      auth
       @user = env['warden'].user || NullUser.new
 
-      if @user
-        render 'layouts/home_loggedin'
-      else
+      if @user.null?
         render 'layouts/home'
+      else
+        render 'layouts/home_loggedin'
       end
-    end
-
-    Warden::Strategies.add(:password) do
-      def valid?
-        params["username"] || params["password"]
-      end
-
-      def authenticate!
-        user = User.authenticate(params["username"], params["password"])
-        user ? success!(user) : redirect!('/sessions/fail')
-      end
-    end
-
-    Warden::Manager.serialize_into_session { |user| user.id }
-    Warden::Manager.serialize_from_session { |id| User.get(id) }
-
-    private
-
-    def auth
-      # authorize!('/sessions/login') if Padrino.env == :production
     end
   end
 end

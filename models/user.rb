@@ -35,10 +35,6 @@ class User
     false
   end
 
-  def self.authenticate(username, password)
-    null_user if username == ENV['ADMIN_E'] && password == ENV['ADMIN_P']
-  end
-
   def trent?
     self.name == 'Trent'
   end
@@ -56,16 +52,6 @@ class User
   end
 
   private
-
-  def self.null_user
-    user = NullUser.new
-    # user.id = 1
-    # user.name = 'Test'
-    # user.surname = "Tester"
-    # user.email = ENV['ADMIN_E']
-    # user.password = ENV['ADMIN_P']
-    user
-  end
 
   def trent
     user = User.new

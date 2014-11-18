@@ -111,4 +111,21 @@ span.old {
 .form-question textarea {
   margin-bottom: 10px; }
 
+.navbar-right {
+  float: right !important; }
+
+.media-meta .col-xs-6 {
+  padding-left: 0; }
+
+.glyphicon-lg {
+  font-size: 1.5em; }
+
+.cms-save-button {
+  font-size: 1.2;
+  margin-right: 10px; }
+
+.cms-actions a {
+  margin-bottom: 15px;
+  font-size: 1.5em; }
+
 /*# sourceMappingURL=main.css.map */

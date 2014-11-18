@@ -1,0 +1,14 @@
+%hr
+
+.media
+  .media-body
+    %h4.media-heading
+      %a{ href: "#{ item.url }" }= item.name
+      %small= item.type
+
+  .media-meta
+    - item.meta.each do |meta_key, meta_val|
+      .col-xs-6
+        %small
+          %b= StringHelper.titleize(meta_key)
+          = meta_val
