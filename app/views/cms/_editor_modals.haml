@@ -17,10 +17,11 @@
               %option Edit
           .form-group
             %label Responsible
-            %input{ type: 'text', class: 'form-control', placeholder: 'Admin responsible' }
+            %input{ type: 'text', class: 'form-control typeahead staff-search', placeholder: 'Admin responsible' }
+
       .modal-footer
         %a{ class: 'btn btn-default pull-left', 'data-dismiss' => 'modal' } Close
-        %a{ class: 'btn btn-primary' } Save
+        %a{ class: 'btn btn-primary', 'data-dismiss' => 'modal' } Save
 
 %div{ id: 'flag', class: 'modal fade', tabindex: '-1', role: 'dialog' }
   .modal-dialog
@@ -34,3 +35,57 @@
         %a{ class: 'btn btn-danger btn-100' } Rewrite required
       .modal-footer
         %a{ class: 'btn btn-default', 'data-dismiss' => 'modal' } Close
+
+%div{ id: 'comment', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title Comments
+      .modal-body
+
+        .container
+          .panel-body.msg_container_base
+            .row.msg_container.base_sent
+              .col-md-10.col-xs-8
+                .messages.msg_sent
+                  %p
+                    Lorum ipsumLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %time{:datetime => "2009-11-13T20:00"} Josh • 51 min
+              .col-md-2.col-xs-4
+                %img{ 'data-src' => 'holder.js/50x50/sky/auto', class: 'img-circle' }
+
+          .panel-footer
+            .input-group
+              %input#btn-input.form-control.input-sm.chat_input{:placeholder => "Respond", :type => "text"}/
+              %span.input-group-btn
+                %button#btn-chat.btn.btn-primary.btn-sm Send
+
+%div{ id: 'stats', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title Content statistics
+      .modal-body
+        %ul
+          - ['views', 'unique visitors', 'prospects', 'leads', 'sales'].each do |stat|
+            %li= "#{ (10..100).to_a.sample } #{ stat } (#{ (1..10).to_a.sample } ave per day)"
+
+%div{ id: 'screenshot', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title A/B test
+      .modal-body
+        .row.ab_tests
+          .col-xs-3
+            %input{ type: 'text', value: '100%' }
+          .col-xs-9
+            %a{ class: 'btn btn-default btn-100' } Original
+        .row.add_test
+          .col-xs-12
+            %a{ class: 'btn btn-success btn-100 btn-add-test' }
+              %span.glyphicon.glyphicon-plus
+              |Add test

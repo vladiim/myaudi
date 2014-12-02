@@ -1,5 +1,13 @@
 # Notes
 
+* assumptions
+
+> - people want driving stats - how to test mvp? with dealers/staff?
+
+> - people want service?
+
+> - people will book with a dealer
+
 * booking engine doesn't work
 
 * Add good content
@@ -90,4 +98,6 @@
 
 * You want approve a draft post
 
-* 
+* Check the funnel conversion dashboard
+
+* Create an A/B test for a headline

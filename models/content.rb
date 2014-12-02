@@ -1,3 +1,14 @@
+class NullContent
+  attr_accessor :id, :name, :type, :url, :meta
+  def initialize
+    @id = 0
+    @name = 'New'
+    @type = 'Article'
+    @url = ''
+    @meta = { }
+  end
+end
+
 class Content
 
   def self.find(id)

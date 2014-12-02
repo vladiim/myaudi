@@ -1,0 +1,22 @@
+%br
+%form
+  .form-group
+    %label Position
+    %input{ type: 'text', class: 'form-control', placeholder: 'Enter position' }
+  %br
+
+  .form-group
+    %label Rights
+    %div{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+      %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+        %span.selected-label
+        %span.caret
+      %ul{ class: 'dropdown-menu', role: 'menu'}
+        - rights = ['Admin', 'Editor', 'Writer']
+        - rights.each do |right|
+          %li{ 'data-value' => "#{ right }" }
+            %a{ href: '#' }= right
+  %br
+  .form-group
+    %label Email
+    %input{ type: 'email', class: 'form-control', placeholder: 'Enter email' }

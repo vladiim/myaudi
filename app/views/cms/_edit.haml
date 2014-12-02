@@ -1,0 +1,42 @@
+.container
+  .row
+    .col-xs-10
+
+      %div{ class: 'placard title-placard', 'data-initialize' => 'placard' }
+        .placard-popup
+        %input{ class: 'form-control placard-field glass', type: 'text', placeholder: "#{ content.name }" }
+        .placard-footer
+          %a{ class: 'placard-cancel', href: '#' } Cancel
+          %button{ class: 'btn btn-primary btn-xs placard-accept', type: 'button' } Save
+
+      %div{ class: 'btn-group selectlist selectlist-cms-title', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+        %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+          %span.selected-label
+          %span.caret
+        %ul{ class: 'dropdown-menu', role: 'menu'}
+          %li{ 'data-value' => "#{ content.type }"}
+            %a{ href: '#' }= content.type
+          - types = [ 'Article', 'User', 'Event' ].reject { |t| t == content.type }
+          - types.each do |type|
+            %li{ 'data-value' => "#{ type }" }
+              %a{ href: '#' }= type
+
+      %form{ role: 'form', class: 'form-lg' }
+        .form-group
+          - if content.type == 'Article'
+            %textarea{ class: 'form-control', rows: 10 }
+
+          - elsif content.type == 'User'
+            = partial 'cms/user_form'
+
+          - elsif content.type == 'Event'
+            = partial 'cms/event_form'
+
+    .col-xs-2.cms-actions
+      - [ 'info-sign', 'flag', 'save', 'comment', 'stats', 'screenshot' ].each do |action|
+        %a{ class: 'btn btn-default', id: "#{ action }-action", 'data-toggle' => 'modal', 'data-target' => "##{ action }" }
+          %span{ class: "glyphicon glyphicon-#{ action }" }
+
+%script{ src: '//tinymce.cachefly.net/4.1/tinymce.min.js' }
+
+= partial 'cms/editor_modals', locals: { content: content }

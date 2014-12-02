@@ -43,6 +43,10 @@ class User
     self.name == 'Admin'
   end
 
+  def mark?
+    self.name == 'Mark'
+  end
+
   def null?
     false
   end

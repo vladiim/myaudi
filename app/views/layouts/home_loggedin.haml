@@ -4,10 +4,13 @@
       %a{ href: '/cars/rs4' } Trent's RS 4
     %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
     %span A-grade | 22nd | 200 trips | 12 services
-- if @user.admin?
-  %h3 Admin dashboard
+- elsif @user.admin?
+  %h3
+    %a{ href: '/dashboard' } Admin dashboard
+  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
+  %span 12% prospect growth | 3% lead growth | 4% sales growth
 
-- elsif @user.id == 3
+- elsif @user.mark?
   %h3
     %a{ href: '/cars/locator' } Mark's A4 Avant
   %iframe{ width: '100%', height: '300px', frameBorder: '0', src: 'https://a.tiles.mapbox.com/v4/vladiim.k6j8ml0f/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmxhZGlpbSIsImEiOiJwdnVmSjFrIn0.jezrnSxoWV4AamZ1nI2z1g' }

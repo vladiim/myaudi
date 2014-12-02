@@ -10,6 +10,7 @@ Myaudi::App.controllers :cms do
   end
 
   get :new do
-    render '/cms/new'
+    content = NullContent.new
+    render '/cms/new', locals: { content: content }
   end
 end
