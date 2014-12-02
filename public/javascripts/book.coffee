@@ -15,6 +15,7 @@ dayListener = ->
     month = $target.data('month')
     year = $target.data('year')
     $( '#full-date' ).text( "#{ day }-#{ month }-#{ year }" )
+    alert('click!')
     toggleModal( TIME_FORM )
 
 closeModalListener = ->
