@@ -1,0 +1,18 @@
+%h2 Dashboards
+
+- [ 'Sales', 'Leads', 'Prospects', 'Engagement' ].each do |metric|
+  .panel.panel-default
+    .panel-heading
+      %h3
+        %a{ href: "/dashboards/#{ metric.downcase }" }= "#{ metric }: #{ (10..100).to_a.sample }"
+
+    .panel-body
+      .col-xs-6
+        = partial 'shared/dropdown_select', locals: { list: ['Daily', 'Monthly', 'Yearly'] }
+
+      .col-xs-6
+        = partial 'shared/dropdown_select', locals: { list: ['Totals', 'Growth'] }
+      %br
+      %br
+      .row
+        %img{ 'data-src' => 'holder.js/100%x100/sky/auto' }

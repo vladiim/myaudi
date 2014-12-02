@@ -96,7 +96,11 @@
 
 * Dependency: login
 
-* You want approve a draft post
+* CMS
+
+> - You want approve a draft post
+
+> - You want Josh Wood to edit the article
 
 * Check the funnel conversion dashboard
 

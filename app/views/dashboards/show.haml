@@ -1,0 +1,13 @@
+%h2= StringHelper.titleize(metric.name)
+
+.row
+  .col-xs-4
+    = partial 'shared/dropdown_select', locals: { list: ['Daily', 'Monthly', 'Yearly'] }
+  .col-xs-4
+    = partial 'shared/dropdown_select', locals: { list: ['Totals', 'Growth'] }
+  .col-xs-4
+    = partial 'shared/dropdown_select', locals: { list: metric.variables }
+
+%br
+.row
+  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }

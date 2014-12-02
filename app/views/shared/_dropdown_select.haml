@@ -1,0 +1,8 @@
+%div{ class: 'btn-group selectlist selectlist-cms-title', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+  %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+    %span.selected-label
+    %span.caret
+  %ul{ class: 'dropdown-menu', role: 'menu'}
+    - list.each do |item|
+      %li{ 'data-value' => "#{ item }" }
+        %a{ href: '#' }= item
