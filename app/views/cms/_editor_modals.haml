@@ -30,9 +30,9 @@
         %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
         %h3.modal-title Content approval
       .modal-body
-        %a{ class: 'btn btn-success btn-100' } Approve
-        %a{ class: 'btn btn-warning btn-100' } Editing required
-        %a{ class: 'btn btn-danger btn-100' } Rewrite required
+        %a{ class: 'btn btn-success btn-100', 'data-dismiss' => 'modal' } Approve
+        %a{ class: 'btn btn-warning btn-100', 'data-dismiss' => 'modal' } Editing required
+        %a{ class: 'btn btn-danger btn-100', 'data-dismiss' => 'modal' } Rewrite required
       .modal-footer
         %a{ class: 'btn btn-default', 'data-dismiss' => 'modal' } Close
 
@@ -68,9 +68,22 @@
         %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
         %h3.modal-title Content statistics
       .modal-body
-        %ul
-          - ['views', 'unique visitors', 'prospects', 'leads', 'sales'].each do |stat|
-            %li= "#{ (10..100).to_a.sample } #{ stat } (#{ (1..10).to_a.sample } ave per day)"
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Stat
+              %th Original
+              %th Test A
+          %tbody
+            - ['Views', 'UVs', 'Prospects', 'Leads', 'Sales'].each do |stat|
+              %tr
+                %td
+                  %b= stat
+                %td= (10..100).to_a.sample
+                %td= (10..100).to_a.sample
+
+
+
 
 %div{ id: 'screenshot', class: 'modal fade', tabindex: '-1', role: 'dialog' }
   .modal-dialog

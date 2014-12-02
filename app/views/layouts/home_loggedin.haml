@@ -4,11 +4,17 @@
       %a{ href: '/cars/rs4' } Trent's RS 4
     %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
     %span A-grade | 22nd | 200 trips | 12 services
+
 - elsif @user.admin?
   %h3
     %a{ href: '/dashboards' } Admin dashboard
   %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
   %span 12% prospect growth | 3% lead growth | 4% sales growth
+
+  %h3
+    %a{ href: '/cms' } CMS TODO
+  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
+  %span You have 6 tasks to complete
 
 - elsif @user.mark?
   %h3

@@ -70,13 +70,15 @@
 
 > - Find your last service
 
-> - Ask the mechanic why all 4 tires needed to be replaced
+> - Ask the mechanic why all 4 tires needed to be replaced on your last service
 
 ***
 
 # Basic
 
 * Check messages
+
+* Find a dealer
 
 * Change profile details
 
@@ -98,7 +100,7 @@
 
 * CMS
 
-> - You want approve a draft post
+> - You want approve a draft post - go to the CMS and assign an edit to "Joshua Wood"
 
 > - You want Josh Wood to edit the article
 
