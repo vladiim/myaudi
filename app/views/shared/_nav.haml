@@ -17,28 +17,11 @@
       %div.nav-standard
         %ul{ class: 'nav navbar-nav' }
 
-          - if @user.trent?
-            %li
-              %a{ href: '/cars/rs4' } My RS4
+          %li
+            %a{ href: '/articles' } Articles
 
-          - elsif @user.admin?
-            %li
-              %a{ href: '/dashboards' } Dashboard
-            %li
-              %a{ href: '/cms' } CMS
+          = partial 'shared/nav_dropdown', locals: { title: 'Book', elements: { one: ['Test drive', '/book/test-drive'], two: ['Service', '/book/service'], three: ['Event', '/book/event'] } }
 
-          - else
-            %li
-              %a{ href: '/articles' } Articles
-          %li.dropdown
-            %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' } Book<span class='caret'></span>
-            %ul{ class: 'dropdown-menu', role: 'menu' }
-              %li
-                %a{ href: '/book/test-drive' } Test drive
-              %li
-                %a{ href: '/book/service' } Service
-              %li
-                %a{ href: '/book/event' } Event
           %li
             %a{ href: '/finance' } Finance calculator
 
@@ -47,14 +30,14 @@
           %li
             %a{ class: 'nav-search', href: '/search' } Search
 
+          - if @user.admin?
+            = partial 'shared/nav_dropdown', locals: { title: 'Admin', elements: { one: ['Dashboard', '/dashboards'], two: ['CMS', '/cms'] } }
+
           - if @user.null?
             %li
               %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
           - else
-            %li
-              %a{ href: '/profile' }= @user.name
-            %li
-              %a{ href: '/logout' } Logout
+            = partial 'shared/nav_dropdown', locals: { title: @user.name, elements: { one: ['My RS4', '/cars/rs4'], two: ['Profile', '/profile'], three: ['Messages', '/messages'], four: ['Logout', '/logout'] } }
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog

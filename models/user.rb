@@ -40,7 +40,7 @@ class User
   end
 
   def admin?
-    self.name == 'Admin'
+    self.name == 'Nathan'
   end
 
   def mark?
@@ -84,7 +84,7 @@ class User
   def audi_admin
     user = User.new
     user.id = 1
-    user.name = 'Admin'
+    user.name = 'Nathan'
     user.surname = ""
     user.email = ENV['AUDI_ADMIN_E']
     user.password = ENV['AUDI_ADMIN_P']
