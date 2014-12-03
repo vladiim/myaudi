@@ -1,0 +1,17 @@
+.search-header
+  %h3= "'#{ term }' results"
+
+  .row
+    .col-xs-4.search-results-filter-1
+      = partial 'shared/dropdown_select', locals: { list: ['Newest', 'Oldest'] }
+    .col-xs-4
+      = partial 'shared/dropdown_select', locals: { list: ['Articles', 'Cars', 'Events', 'Dealerships'] }
+    .col-xs-3
+      %a{ class: 'btn btn-default right-align' }
+        %span{ class: 'glyphicon glyphicon-search' }
+
+.search-results
+  - 6.times do
+    = partial 'articles/item'
+
+  %a.btn.btn-default.btn-100 Load more

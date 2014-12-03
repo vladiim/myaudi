@@ -145,6 +145,37 @@ span.old {
 .ab_tests input {
   width: 50px; }
 
+.nav-search-form .dropdown-menu {
+  position: relative; }
+.nav-search-form .nav-search-select {
+  margin-left: -15px; }
+.nav-search-form .search {
+  margin-right: -30px; }
+
+.nav-search-results {
+  display: block;
+  background-color: white; }
+  .nav-search-results h4 {
+    margin-left: 15px; }
+  .nav-search-results .type {
+    font-size: 70%; }
+  .nav-search-results .results {
+    list-style: none;
+    display: inline-block; }
+
+.search-header {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  padding-bottom: 10px;
+  width: 100%;
+  margin-top: -10px; }
+  .search-header .search-results-filter-1 {
+    margin-left: 25px; }
+
+.search-results {
+  margin-top: 100px; }
+
 .panel {
   margin-bottom: 0px; }
 

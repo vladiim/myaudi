@@ -1,0 +1,41 @@
+%div{ class: 'nav-search-form hidden' }
+  .col-xs-4.nav-search-select
+    %span{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+      %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button' }
+        %span.selected-label
+        %span.caret
+      %ul{ class: 'dropdown-menu', role: 'menu' }
+        - ['All', 'Models', 'Articles', 'Dealerships'].each do |opt|
+          %li{ 'data-value' => "#{ opt }" }
+            %a{ href: '#' }= opt
+  .col-xs-8
+    %span{ class: 'search input-group', role: 'search' }
+      %input{ id: 'nav-search-input', type: 'search', class: 'form-control', placeholder: 'Search' }
+      %span.input-group-btn
+        %button{ class: 'btn btn-default', type: 'button' }
+          %span.glyphicon.glyphicon-search
+  %a{ href: '#', class: 'nav-search' } Cancel
+
+  .row.nav-search-results.hidden
+    %h4 Results
+    .col-xs-2.type
+      Suggestions
+    .col-xs-10
+      %ul.results
+        - (1..3).to_a.each do |n|
+          %li
+            %a{ href: "/search/suggestion-#{ n }" }= "Suggestion #{ n }"
+    .col-xs-2.type
+      Models
+    .col-xs-10
+      %ul.results
+        - (1..3).to_a.each do |n|
+          %li
+            %a{ href: '/articles/1' }= "Model #{ n }"
+    .col-xs-2.type
+      Articles
+    .col-xs-10
+      %ul.results
+        - (1..3).to_a.each do |n|
+          %li
+            %a{ href: '/articles/1' }= "Article #{ n }"

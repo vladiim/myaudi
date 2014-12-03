@@ -11,47 +11,50 @@
       %a{ class: 'navbar-brand', href: '/' } myAudi
 
     %div{ class: 'collapse navbar-collapse', id: 'navbar-collapse' }
-      %ul{ class: 'nav navbar-nav' }
 
-        - if @user.trent?
-          %li
-            %a{ href: '/cars/rs4' } My RS4
+      = partial 'shared/nav_search'
 
-        - elsif @user.admin?
-          %li
-            %a{ href: '/dashboards' } Dashboard
-          %li
-            %a{ href: '/cms' } CMS
+      %div.nav-standard
+        %ul{ class: 'nav navbar-nav' }
 
-        - else
-          %li
-            %a{ href: '/articles' } Articles
-        %li.dropdown
-          %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' } Book<span class='caret'></span>
-          %ul{ class: 'dropdown-menu', role: 'menu' }
+          - if @user.trent?
             %li
-              %a{ href: '/book/test-drive' } Test drive
-            %li
-              %a{ href: '/book/service' } Service
-            %li
-              %a{ href: '/book/event' } Event
-        %li
-          %a{ href: '/finance' } Finance calculator
+              %a{ href: '/cars/rs4' } My RS4
 
-      %ul{ class: 'nav navbar-nav navbar-right' }
-        %form{ class: 'navbar-form navbar-left', role: 'search' }
-          .form-group
-            %input{ type: 'text', class: 'form-control', placeholder: 'Search' }
-            %button{ type: 'submit', class: 'btn btn-default' } Go
+          - elsif @user.admin?
+            %li
+              %a{ href: '/dashboards' } Dashboard
+            %li
+              %a{ href: '/cms' } CMS
 
-        - if @user.null?
+          - else
+            %li
+              %a{ href: '/articles' } Articles
+          %li.dropdown
+            %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' } Book<span class='caret'></span>
+            %ul{ class: 'dropdown-menu', role: 'menu' }
+              %li
+                %a{ href: '/book/test-drive' } Test drive
+              %li
+                %a{ href: '/book/service' } Service
+              %li
+                %a{ href: '/book/event' } Event
           %li
-            %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
-        - else
+            %a{ href: '/finance' } Finance calculator
+
+        %ul{ class: 'nav navbar-nav navbar-right' }
+
           %li
-            %a{ href: '/profile' }= @user.name
-          %li
-            %a{ href: '/logout' } Logout
+            %a{ class: 'nav-search', href: '/search' } Search
+
+          - if @user.null?
+            %li
+              %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
+          - else
+            %li
+              %a{ href: '/profile' }= @user.name
+            %li
+              %a{ href: '/logout' } Logout
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog
