@@ -23,6 +23,9 @@
           = partial 'shared/nav_dropdown', locals: { title: 'Book', elements: { one: ['Test drive', '/book/test-drive'], two: ['Service', '/book/service'], three: ['Event', '/book/event'] } }
 
           %li
+            %a{ href: '/dealerships' } Dealerships
+
+          %li
             %a{ href: '/finance' } Finance calculator
 
         %ul{ class: 'nav navbar-nav navbar-right' }
