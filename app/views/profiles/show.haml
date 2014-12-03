@@ -1,0 +1,41 @@
+%h3 My profile
+
+%div{ role: 'tabpanel' }
+  %ul{ class: 'nav nav-tabs', role: 'tablist' }
+    %li{ role: 'presentation', class: 'active' }
+      %a{ href: '#details', 'aria-controls' => 'home', role: 'tab', 'data-toggle' => 'tab' } Details
+    %li{ role: 'presentation' }
+      %a{ href: '#notifications', 'aria-controls' => 'home', role: 'tab', 'data-toggle' => 'tab' } Notifications
+    %li{ role: 'presentation' }
+      %a{ href: '#interests', 'aria-controls' => 'home', role: 'tab', 'data-toggle' => 'tab' } Interests
+
+  .tab-content.profile
+    %div{ role: 'tabpanel', class: 'tab-pane active', id: 'details'}
+      .profile
+        .col-xs-5
+          %img{ 'data-src' => 'holder.js/100%x100/sky/auto' }
+          %a Edit image
+          %hr
+          %a Change password
+        .col-xs-7
+          = partial '/shared/placard', locals: { value: profile.name }
+          = partial '/shared/placard', locals: { value: profile.surname }
+          = partial '/shared/placard', locals: { value: profile.email }
+          = partial '/shared/placard', locals: { value: '044983838274' }
+          = partial '/shared/placard', locals: { value: '1 Something St' }
+          = partial '/shared/placard', locals: { value: 'Redfern, 2016' }
+
+    %div{ role: 'tabpanel', class: 'tab-pane', id: 'notifications'}
+      %h3 Notifications
+      - ['Audi Insight', 'New car launches', 'Retail offers', 'Personal offers', 'Messages from users', 'Messages from Audi staff', 'Driving alerts', 'Service alerts'].each do |opt|
+        .checkbox
+          %label{ class: 'checkbox-custom', 'data-initialize' => 'checkbox' }
+            %input{ type: 'checkbox', value: '', class: 'sr-only' }
+            %span.checkbox-label= opt
+
+
+    %div{ role: 'tabpanel', class: 'tab-pane', id: 'interests'}
+      %h3 Interests
+      - ['Audi R&D', 'Racing', 'Cuisine', 'The arts', 'Sports', 'Music', 'Film'].each do |opt|
+        .col-xs-4.interest-item
+          = opt

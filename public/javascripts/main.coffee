@@ -28,7 +28,16 @@ initTypeAhead = ->
     displayKey: 'value'
     source: substringMatcher( staff )
 
+initCheckbox = ->
+  $( '.checkbox-notifications' ).checkbox()
+
+interestListener = ->
+  $( '.interest-item' ).on 'click', ( event ) ->
+    $target = $( event.target )
+    $target.toggleClass( 'active' )
 
 $( document ).ready ->
   formListener()
   initTypeAhead()
+  initCheckbox()
+  interestListener()

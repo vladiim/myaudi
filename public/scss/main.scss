@@ -257,10 +257,21 @@ span.old {
   margin-top: 100px;
 }
 
+.tab-content.profile {
+  margin-top: 15px;
+}
 
+.interest-item {
+  display: inline-block;
+  padding: 20px 0;
+  margin: 5px;
+  background-color: blanchedalmond;
+  text-align: center;
+}
 
-
-
+.interest-item.active {
+  background-color: coral;
+}
 
 
 
