@@ -1,10 +1,11 @@
 %h2 Dashboards
 
-- [ 'Sales', 'Leads', 'Prospects', 'Engagement' ].each do |metric|
+- [ 'Market position', 'Sales', 'Leads', 'Prospects', 'Engagement' ].each do |metric|
   .panel.panel-default
     .panel-heading
       %h3
-        %a{ href: "/dashboards/#{ metric.downcase }" }= "#{ metric }: #{ (10..100).to_a.sample }"
+        - val = metric == 'Market position' ? 3 : (10..100).to_a.sample
+        %a{ href: "/dashboards/#{ metric.downcase }" }= "#{ metric }: #{ val }"
 
     .panel-body
       .col-xs-6

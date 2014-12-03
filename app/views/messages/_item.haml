@@ -1,0 +1,33 @@
+.media
+  %small 5 hours ago | From Dave (Audi Sydney Mechanic)
+  .media-body
+    %h4.media-heading
+      %a{ href: '/messages/1', 'data-toggle' => 'modal', 'data-target' => '#messages' }= title
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+
+%hr
+
+%div{ id: 'messages', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title= title
+      .modal-body
+
+        .container
+          .panel-body.msg_container_base
+            .row.msg_container.base_sent
+              .col-md-10.col-xs-8
+                .messages.msg_sent
+                  %p
+                    Lorum ipsumLorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  %time{:datetime => "2009-11-13T20:00"} Josh • 51 min
+              .col-md-2.col-xs-4
+                %img{ 'data-src' => 'holder.js/50x50/sky/auto', class: 'img-circle' }
+
+          .panel-footer
+            .input-group
+              %input#btn-input.form-control.input-sm.chat_input{:placeholder => "Respond", :type => "text"}/
+              %span.input-group-btn
+                %button#btn-chat.btn.btn-primary.btn-sm Send

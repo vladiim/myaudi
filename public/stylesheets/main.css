@@ -189,6 +189,9 @@ span.old {
 .interest-item.active {
   background-color: coral; }
 
+.messages-list {
+  margin-left: 5px; }
+
 .panel {
   margin-bottom: 0px; }
 
