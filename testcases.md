@@ -58,33 +58,65 @@
 
 > - Login as Mark
 
-> - Check where you car is
-
-
+> - Check where you car is and it's distance from you
 
 ***
 
 # Drive
 
-* Dependency: login as Trent
+1. **Check driving grade**
 
-* You've just finished a trip to North Sydney from Redfern in your RS4
+> - You've just finished a trip to North Sydney from Redfern in your RS4
+
+> - You want to check your driving score
+
+> - Login as Trent
 
 > - Check your overall grade for the trip
 
 > - Find out your grade from Regent st to Harris st
 
+2. **Check your place**
+
+> - You want to check your place on the Audi owner's leaderboard
+
+> - Login as Trent
+
+> - Check your place
+
 ***
 
 # Service
 
-* Dependency: login
+1. **Ask a service question**
 
-* You have a question about your last service
+> - You have a question about your last service
+
+> - Login as Trent
 
 > - Find your last service
 
 > - Ask the mechanic why all 4 tires needed to be replaced on your last service
+
+***
+
+# Admin
+
+1. **Review a new article**
+
+> - You want to review the latest articles written by the content team
+
+> - Login as an admin
+
+> - 
+
+> - You want approve a draft post - go to the CMS and assign an edit to "Joshua Wood"
+
+> - You want Josh Wood to edit the article
+
+* Check the funnel conversion dashboard
+
+* Create an A/B test for a headline
 
 ***
 
@@ -99,25 +131,3 @@
 * Search for an article "blah blah"
 
 ***
-
-# Tech
-
-* Show validation
-
-* Add GA w/ GTM
-
-***
-
-# Admin
-
-* Dependency: login
-
-* CMS
-
-> - You want approve a draft post - go to the CMS and assign an edit to "Joshua Wood"
-
-> - You want Josh Wood to edit the article
-
-* Check the funnel conversion dashboard
-
-* Create an A/B test for a headline
