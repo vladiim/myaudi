@@ -30,29 +30,43 @@
 
 # Buy
 
-* You're researching a zippy car to get you around the city whilst on the bus going to work
+1. **Calculate finance**
+
+> - You're researching a zippy car to get you around the city whilst on the bus going to work
 
 > - Go to the finance calculator
 
-> - Look for and A3 Sedan and estimate a 6% interest over 4 years
+> - Look for and A3 Sedan
 
-* Book a test drive
+> - Estimate a 6% interest over 4 years
 
-> Date
+2. **Book a test drive**
 
-> Pick dealer @ 9:00am
+> - You want to book a test drive
 
-> Fill in your details
+> - Pick any date
 
-* Login (mark@email.com, password)
+> - Pick dealer @ 9:00am
 
-> Check where you car is
+> - Fill in your details
+
+3. **Car locator**
+
+> - You're waiting for you new Audi to be delivered from Germany
+
+> - You want to check where your car currently is
+
+> - Login as Mark
+
+> - Check where you car is
+
+
 
 ***
 
 # Drive
 
-* Dependency: login
+* Dependency: login as Trent
 
 * You've just finished a trip to North Sydney from Redfern in your RS4
 

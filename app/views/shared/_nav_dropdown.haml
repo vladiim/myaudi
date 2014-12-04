@@ -3,6 +3,9 @@
     = title
     %span.caret
   %ul{ class: 'dropdown-menu', role: 'menu' }
+    - car_nav = @user.trent? ? ['My RS4', '/cars/rs4'] : ['My A4 Avant', '/cars/locator']
+    %li
+      %a{ href: "#{ car_nav[1] }" }= car_nav[0]
     - elements.each do |element|
       %li
         %a{ href: "#{ element[1][1] }" }= element[1][0]

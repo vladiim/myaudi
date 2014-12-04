@@ -40,7 +40,7 @@
             %li
               %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
           - else
-            = partial 'shared/nav_dropdown', locals: { title: @user.name, elements: { one: ['My RS4', '/cars/rs4'], two: ['Profile', '/profile'], three: ['Messages', '/messages'], four: ['Logout', '/logout'] } }
+            = partial 'shared/nav_dropdown', locals: { title: @user.name, elements: { two: ['Profile', '/profile'], three: ['Messages', '/messages'], four: ['Logout', '/logout'] } }
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog
