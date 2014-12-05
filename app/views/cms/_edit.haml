@@ -4,7 +4,7 @@
 
       %div{ class: 'placard title-placard', 'data-initialize' => 'placard' }
         .placard-popup
-        %input{ class: 'form-control placard-field glass', type: 'text', placeholder: "#{ content.name }" }
+        %input{ class: 'form-control placard-field glass', type: 'text', value: "#{ content.name }" }
         .placard-footer
           %a{ class: 'placard-cancel', href: '#' } Cancel
           %button{ class: 'btn btn-primary btn-xs placard-accept', type: 'button' } Save
