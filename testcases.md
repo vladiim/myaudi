@@ -108,11 +108,13 @@
 
 > - Login as an admin
 
-> - 
+> - Go to the Content Management System (CMS)
 
-> - You want approve a draft post - go to the CMS and assign an edit to "Joshua Wood"
+> - Open the first article
 
-> - You want Josh Wood to edit the article
+> - Approve the article
+
+* You want Josh Wood to edit the article
 
 * Check the funnel conversion dashboard
 
