@@ -4,7 +4,8 @@ Myaudi::App.controllers :dashboards do
   end
 
   get :show, map: '/dashboards/:name' do
-    metric = Metric.find(params[:name])
+    name = params[:name].gsub('-', ' ')
+    metric = Metric.find(name)
     render '/dashboards/show', locals: { metric: metric }
   end
 end

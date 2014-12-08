@@ -1,19 +1,27 @@
 %h2 Dashboards
 
-- [ 'Market position', 'Sales', 'Leads', 'Prospects', 'Engagement' ].each do |metric|
-  .panel.panel-default
-    .panel-heading
-      %h3
-        - val = metric == 'Market position' ? 3 : (10..100).to_a.sample
-        %a{ href: "/dashboards/#{ metric.downcase }" }= "#{ metric }: #{ val }"
+.dashboard-controls
+  .col-xs-6
+    = partial 'shared/dropdown_select', locals: { list: ['Daily', 'Monthly', 'Yearly'] }
+  .col-xs-6
+    = partial 'shared/dropdown_select', locals: { list: ['Totals', 'Growth'] }
 
-    .panel-body
-      .col-xs-6
-        = partial 'shared/dropdown_select', locals: { list: ['Daily', 'Monthly', 'Yearly'] }
+.dashboards
+  .col-xs-6.metric{ 'data-url' => '/dashboards/market-position' }
+    %p.num{ 'data-url' => '/dashboards/market-position' } 3
+    %p.desc{ 'data-url' => '/dashboards/market-position' } Market position
+  .col-xs-6.metric{ 'data-url' => '/dashboards/sales' }
+    %p.num{ 'data-url' => '/dashboards/sales' } 230
+    %p.desc{ 'data-url' => '/dashboards/sales' } Sales
+  .funnel
+    .col-xs-4.metric{ 'data-url' => '/dashboards/engagement' }
+      %p.num{ 'data-url' => '/dashboards/engagement' } 40,450
+      %p.desc{ 'data-url' => '/dashboards/engagement' } Engagement
+    .col-xs-4.metric{ 'data-url' => '/dashboards/prospects' }
+      %p.num{ 'data-url' => '/dashboards/prospects' } 9,875
+      %p.desc{ 'data-url' => '/dashboards/prospects' } Prospects
+    .col-xs-4.metric{ 'data-url' => '/dashboards/leads' }
+      %p.num{ 'data-url' => '/dashboards/leads' } 5,434
+      %p.desc{ 'data-url' => '/dashboards/leads' } Leads
 
-      .col-xs-6
-        = partial 'shared/dropdown_select', locals: { list: ['Totals', 'Growth'] }
-      %br
-      %br
-      .row
-        %img{ 'data-src' => 'holder.js/100%x100/sky/auto' }
+%hr

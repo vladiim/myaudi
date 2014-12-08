@@ -192,6 +192,26 @@ span.old {
 .messages-list {
   margin-left: 5px; }
 
+.dashboard-controls {
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+
+.dashboards {
+  text-align: center;
+  margin-left: -20px; }
+  .dashboards .col-xs-6 > .num {
+    font-size: 350%;
+    font-weight: bold;
+    margin-bottom: -10px; }
+  .dashboards .metric {
+    display: block;
+    padding: 10px;
+    border: 1px dotted lightslategrey; }
+  .dashboards .funnel .num {
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: -5px; }
+
 .panel {
   margin-bottom: 0px; }
 

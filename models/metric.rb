@@ -6,7 +6,14 @@ class Metric
   end
 
   def self.all
-    [sales, leads, prospects, engagement]
+    [market_position, sales, leads, prospects, engagement]
+  end
+
+  def self.market_position
+    metric = new
+    metric.name = 'Market position'
+    metric.variables = [ 'None', 'State' ]
+    metric
   end
 
   def self.sales

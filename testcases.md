@@ -1,3 +1,21 @@
+# Missing
+
+* sign in tour
+
+* onboarding personality map
+
+* car handover
+
+* roadside assist
+
+* contact audi
+
+* add driver
+
+* car diagnostics
+
+***
+
 # Notes
 
 * assumptions
