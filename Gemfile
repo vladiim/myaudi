@@ -20,6 +20,8 @@ gem 'sass',          '~> 3.4.1'
 gem 'haml',          '~> 4.0.5'
 gem 'pg',            '~> 0.17.1'
 gem 'sequel',        '~> 4.13.0'
+gem 'uglifier'
+gem 'listen'
 
 # Test requirements
 group :test do

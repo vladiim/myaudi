@@ -1,0 +1,10 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Update your profile
+  .panel-body
+    %p What are your interests?
+    - ['Audi R&D', 'Racing', 'Cuisine', 'The arts', 'Sports', 'Music'].each do |opt|
+      .col-xs-3.interest-item
+        = opt
+
+= partial 'articles/list'

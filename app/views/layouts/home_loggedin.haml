@@ -6,15 +6,20 @@
     %span A-grade | 22nd | 200 trips | 12 services
 
 - elsif @user.admin?
+
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        %a{ href: '/cms' } CMS TODO: 6 tasks
+    .panel-body
+      = partial 'cms/item', collection: content_list
+      %hr
+      %a{ href: '/cms', class: 'btn btn-primary btn-100' } View all tasks
+
   %h3
     %a{ href: '/dashboards' } Admin dashboard
   %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
-  %span 12% prospect growth | 3% lead growth | 4% sales growth
-
-  %h3
-    %a{ href: '/cms' } CMS TODO
-  %img{ 'data-src' => 'holder.js/100%x200/sky/auto' }
-  %span You have 6 tasks to complete
+  %span 3% lead growth | 4% sales growth
 
 - elsif @user.mark?
   %h3
@@ -22,4 +27,5 @@
   %iframe{ width: '100%', height: '300px', frameBorder: '0', src: 'https://a.tiles.mapbox.com/v4/vladiim.k6j8ml0f/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmxhZGlpbSIsImEiOiJwdnVmSjFrIn0.jezrnSxoWV4AamZ1nI2z1g' }
   %span Kassel Germany | 14,457 km | 2 months away
 
-= partial 'articles/list'
+- unless @user.admin?
+  = partial 'articles/list'

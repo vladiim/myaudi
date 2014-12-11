@@ -15,8 +15,8 @@
         .col-xs-5
           %img{ 'data-src' => 'holder.js/100%x100/sky/auto' }
           %a Edit image
-          %hr
           %a Change password
+          %a{ href: '#', class: 'btn btn-danger' } Delete account
         .col-xs-7
           = partial '/shared/placard', locals: { value: profile.name }
           = partial '/shared/placard', locals: { value: profile.surname }

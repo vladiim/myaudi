@@ -23,7 +23,8 @@ module Myaudi
       if @user.null?
         render 'layouts/home'
       else
-        render 'layouts/home_loggedin'
+        content_list = Content.list
+        render 'layouts/home_loggedin', locals: { content_list: content_list }
       end
     end
 

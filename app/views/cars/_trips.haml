@@ -4,9 +4,9 @@
   Order by
   %a most recent
 
-%ul.list-group
+%div.list-group
   - @trips.each do |trip|
-    %li.list-group-item.trip-item
+    %a{ href: '/trips/redfern-to-north-sydney', class: 'list-group-item' }
       .row
         .col-xs-11
           %small= trip.date

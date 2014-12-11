@@ -19,102 +19,28 @@
 
         %title= @title.present? ? "#{@title} | myAudi" : "myAudi"
         %meta{:name => "description", :content => ""}
-        -# %meta{:name => "keywords", :content => ""}
-        -# %meta{:name => "author", :content => ""}
 
         -# Mobile
         -# ==========================================================================
 
         %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-        -# %meta{:name => "HandheldFriendly", :content => "True"}
-        -# %meta{:name => "MobileOptimized", :content => "320"}
-
-        -# iOS web app
-
-        -# %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
-        -# %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black"}
-        -# %link{:rel => "apple-touch-startup-image", :href => "/img/touch/startup.png"}
-
-        -# RSS
-        -# ==========================================================================
-
-        -# %link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "http://feeds.feedburner.com/FEEDNAME"}
-
-        -# Favicon
-        -# ==========================================================================
 
         %link{:href => "/favicon.ico", :rel => "shortcut icon"}
 
-        -# iPad 3 Retina Display
-
-        -# %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "/img/touch/apple-touch-icon-144x144-precomposed.png"}
-
-        -# iPhone 4 Retina display
-
-        -# %link{:rel => "apple-touch-icon-precomposed", :sizes => "114x114", :href => "/img/touch/apple-touch-icon-114x114-precomposed.png"}
-
-        -# iPad non-Retina display
-
-        -# %link{:rel => "apple-touch-icon-precomposed", :sizes => "72x72", :href => "/img/touch/apple-touch-icon-72x72-precomposed.png"}
-
-        -# Non-Retina iPhone, iPod Touch, Android 2.1+
-
-        -# %link{:rel => "apple-touch-icon-precomposed", :href => "/img/touch/apple-touch-icon-57x57-precomposed.png"}
-
-        -# Nokia
-
-        -# %link{:rel => "shortcut icon", :href => "/img/touch/apple-touch-icon.png"}
-
         -# CSS
         -# ==========================================================================
-
         = stylesheet_link_tag 'bootstrap.min.css'
+        /= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'
+
         = stylesheet_link_tag 'responsive-calendar.css'
         = stylesheet_link_tag 'fuelux.css'
         = stylesheet_link_tag 'main.css'
 
-        / %link{:rel => "stylesheet", :href => "/css/base.css"}
-        /# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
-
-        /# IE Fixes
-        /# ==========================================================================
-
-        /#
-        /# Use HTML5 Shim polyfill if not using Modernizr
-        /# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        /# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        /#
-
-        /# /[if (lt IE 9) & (!IEMobile)]
-        /   -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-        /   %script{:src => "/js/libs/selectivizr.min.js"}
-        /   -# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
-        /   -# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
-
-        /# [if (lt IE 8) & (!IEMobile)]
-        /   %link{:rel => "stylesheet", :href => "/css/ie7.css"}
-
-        /# [if IE 6 & (!IEMobile)]
-        /   %link{:rel => "stylesheet", :href => "/css/ie6.css"}
-
-        /# JS
-        /# ==========================================================================
-
-        /# Typekit - change XXXXXXX to be your site's Typekit Kit ID
-
-        /# %script{:src => "http://use.typekit.com/XXXXXXX.js"}
-        /# :javascript
-        /   try{Typekit.load();}catch(e){}
-
-        /# Modernizr
-
-        /# %script{:src => "/js/libs/modernizr.custom.js"}
-
     %body.fuelux
 
-        -# ==========================================================================
-        -# Content
-        -# ==========================================================================
+        /# ==========================================================================
+        /# Content
+        /# ==========================================================================
 
         = partial 'shared/nav'
 
@@ -129,7 +55,7 @@
 
         /# jQuery
 
-        = javascript_include_tag 'jquery.js'
+        = javascript_include_tag 'https://code.jquery.com/jquery-2.1.1.min.js'
 
         - if Padrino.env == :production
             %script
@@ -147,11 +73,14 @@
         = javascript_include_tag 'polyfills.js'
         = javascript_include_tag 'augment.js'
         = javascript_include_tag 'holder.js'
+
+        /= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'
         = javascript_include_tag 'bootstrap.min.js'
+
         = javascript_include_tag 'underscore.js'
         = javascript_include_tag 'typeahead.js'
 
-        / Bootstrap
+        / Responsive calendar
         = javascript_include_tag 'responsive-calendar.js'
 
         / Fuel UX
@@ -164,13 +93,15 @@
         = javascript_include_tag 'typeahead.js'
 
         /# Custom JS
-        = javascript_include_tag 'finance.js'
-        = javascript_include_tag 'book.js'
-        = javascript_include_tag 'alerts.js'
-        = javascript_include_tag 'trip.js'
-        = javascript_include_tag 'message.js'
-        = javascript_include_tag 'tinymce.js'
-        = javascript_include_tag 'add_test.js'
-        = javascript_include_tag 'search.js'
-        = javascript_include_tag 'dashboards.js'
-        = javascript_include_tag 'main.js'
+        / - if Padrino.env == :production
+        = javascript_include_tag 'mini/main.min.js'
+        / = javascript_include_tag 'finance.js'
+        / = javascript_include_tag 'book.js'
+        / = javascript_include_tag 'alerts.js'
+        / = javascript_include_tag 'trip.js'
+        / = javascript_include_tag 'message.js'
+        / = javascript_include_tag 'tinymce.js'
+        / = javascript_include_tag 'add_test.js'
+        / = javascript_include_tag 'search.js'
+        / = javascript_include_tag 'dashboards.js'
+        / = javascript_include_tag 'main.js'
