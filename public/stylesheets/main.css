@@ -212,6 +212,9 @@ span.old {
     font-weight: bold;
     margin-bottom: -5px; }
 
+#signup input.signup-checkbox {
+  margin-left: -15px !important; }
+
 .panel {
   margin-bottom: 0px; }
 

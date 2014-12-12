@@ -1,8 +1,7 @@
 %h3 Your grade
 
-%ul.list-group
+.list-group
   - @grades.each do |grade|
-    %li.list-group-item
-      %a{ href: "/grades/#{ StringHelper.url(grade) }" }
-        = grade
-        %span.pull-right >
+    %a{ href: "/grades/#{ StringHelper.url(grade) }", class: 'list-group-item' }
+      = grade
+      %span.pull-right >

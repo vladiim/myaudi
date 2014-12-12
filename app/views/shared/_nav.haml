@@ -51,16 +51,22 @@
           %span.sr-only Close
         %h4.modal-title Login/Sign up
       .modal-body
-        .row
-          .col-md-6
-            %h4 Login
-            %br
 
+        %ul{ class: 'nav nav-tabs', role: 'tablist' }
+          %li{ class: 'active' }
+            %a{ href: '#login', role: 'tab', 'data-toggle' => 'tab' }
+              %h4 Login
+          %li
+            %a{ href: '#signup', role: 'tab', 'data-toggle' => 'tab' }
+              %h4 Sign up
+
+        .tab-content
+          %div{ class: 'tab-pane active', id: 'login' }
             = form_tag '/sessions/create' do
               = field_set_tag do
                 .form-group
-                  = label_tag :email, for: 'email'
-                  = email_field_tag :email, class: 'form-control', placeholder: 'Enter email'
+                  = label_tag :username, for: 'email'
+                  = text_field_tag :email, class: 'form-control', placeholder: 'Enter email'
                 .form-group
                   = label_tag :password, for: 'password'
                   = password_field_tag :password, class: 'form-control', placeholder: 'Enter password'
@@ -68,11 +74,7 @@
                 = submit_tag "Login", class: 'btn btn-primary'
               %a{ href: '/forgot-password' } Forgot password?
 
-          %hr
-
-          .col-md-6
-            %h4 Sign up
-            %br
+          %div{ class: 'tab-pane', id: 'signup' }
             %form
               .form-group
                 %label{ for: 'email' } Email
@@ -85,10 +87,10 @@
                 %input{ type: 'password', class: 'form-control', placeholder: 'Confirm password'}
               .checkbox
                 %label
-                  %input{ type: 'checkbox' } I agree to Audi's <a href="/privacy">privacy policy <i><small>(no spam)</small></i></a>
+                  %input{ type: 'checkbox', class: 'signup-checkbox' } I agree to Audi's <a href="/privacy">privacy policy <i><small>(no spam)</small></i></a>
               .checkbox
                 %label
-                  %input{ type: 'checkbox' } I'm happy to receive emails from Audi
+                  %input{ type: 'checkbox', class: 'signup-checkbox' } I'm happy to receive emails from Audi
             %a{ href: '/signup', class: 'btn btn-primary' } Sign up
 
       .modal-footer
