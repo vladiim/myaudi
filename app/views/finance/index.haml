@@ -6,7 +6,8 @@
 .container
   .row
     .span-sm-6
-      %h3 I'm interested in an <a class="finance-calculator" data-type="model" href="#">A1</span></a>, <a class="finance-calculator" data-type="variant" data-value="Sportsback" href="#">Sportsback</a>, I live in <a class="finance-calculator" data-type="suburb" href="#">2000</a>, I'm purchasing for <a class="finance-calculator" data-type="use" href="#">Personal</a> use, Estimate <a class="finance-calculator" data-type="interest" href="#">5</span></a>% interest, Over <a class="finance-calculator" data-type="years" href="#">4</span></a> years.
+      %h3
+        I'm interested in an <a class="finance-calculator" data-type="model" href="#">A1</span></a>, <a class="finance-calculator" data-type="variant" data-value="Sportsback" href="#">Sportsback</a>, I live in <a class="finance-calculator" data-type="suburb" href="#">2000</a>, I'm purchasing for <a class="finance-calculator" data-type="use" href="#">Personal</a> use, Estimate <a class="finance-calculator" data-type="interest" href="#">5</span></a>% interest, Over <a class="finance-calculator" data-type="years" href="#">4</span></a> years.
 
     %hr
 
@@ -39,9 +40,10 @@
   %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'suburb' } < Back
   %hr
   %h3 Change your postcode
-  %input{ type: 'text', id: 'suburb-search', class: 'form-control', autofocus: 'true', autocomplete: 'off' }
+  %input{ type: 'text', class: 'form-control' }
   %br
-  %button{ id: 'suburb-input-submit', class: 'btn btn-primary btn-large', type: 'button', 'data-type' => 'suburb' } Save postcode
+  %br
+  %button{ id: 'suburb-input-submit', class: 'btn btn-primary btn-100 close-finance-calc', type: 'button', 'data-type' => 'suburb' } Save postcode
 
 #use-input.finance-calculator-form.hidden
   %a{ href: '#', class: 'finance-calculator-close', 'data-type' => 'variant' } < Back

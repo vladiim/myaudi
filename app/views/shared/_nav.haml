@@ -62,6 +62,9 @@
 
         .tab-content
           %div{ class: 'tab-pane active', id: 'login' }
+            %br
+            %a{ class: 'btn btn-default btn-100' } Login with LinkedIn
+            %a{ class: 'btn btn-default btn-100' } Login with Facebook
             = form_tag '/sessions/create' do
               = field_set_tag do
                 .form-group
@@ -71,7 +74,7 @@
                   = label_tag :password, for: 'password'
                   = password_field_tag :password, class: 'form-control', placeholder: 'Enter password'
               = field_set_tag( class: 'buttons' ) do
-                = submit_tag "Login", class: 'btn btn-primary'
+                = submit_tag "Login", class: 'btn btn-primary btn-100 btn-lg'
               %a{ href: '/forgot-password' } Forgot password?
 
           %div{ class: 'tab-pane', id: 'signup' }

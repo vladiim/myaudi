@@ -11,4 +11,8 @@ Myaudi::App.controllers :pages do
   get :home_welcome, map: '/pages/home_welcome' do
     render '/pages/home_welcome'
   end
+
+  get :owners_leaderboard, map: '/pages/owners_leaderboard' do
+    render '/pages/owners_leaderboard'
+  end
 end

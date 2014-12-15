@@ -1,0 +1,37 @@
+%ul{ class: 'nav nav-tabs nav-car', role: 'tablist' }
+  %li
+    %a{ href: '#grade', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 A-
+      %small grade
+  %li.active
+    %a{ href: '#place', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 Audi
+      %small leaderboard
+  %li
+    %a{ href: '#trips', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 200
+      %small trips
+  %li
+    %a{ href: '#services', role: 'tab', 'data-toggle' => 'tab' }
+      %h4 12
+      %small services
+
+.tab-content
+  %div{ class: 'tab-pane active', id: 'Place' }
+    %h3 Owner's leaderboard
+    %p Compare yourself to other Audi owners.
+
+    .checkbox
+      %label{ class: 'checkbox-custom', 'data-initialize' => 'checkbox' }
+        %input{ type: 'checkbox', value: '', class: 'sr-only' }
+        %span.checkbox-label Use my first name
+
+    .checkbox
+      %label{ class: 'checkbox-custom', 'data-initialize' => 'checkbox' }
+        %input{ type: 'checkbox', value: '', class: 'sr-only' }
+        %span.checkbox-label
+          I agree to the
+          %a{ href: '#' } privacy policy.
+
+    %hr
+    %a{ href: '#', class: 'btn btn-primary btn-100' } Join the leaderboard

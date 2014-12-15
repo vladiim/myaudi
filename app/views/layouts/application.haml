@@ -93,15 +93,16 @@
         = javascript_include_tag 'typeahead.js'
 
         /# Custom JS
-        / - if Padrino.env == :production
-        = javascript_include_tag 'mini/main.min.js'
-        / = javascript_include_tag 'finance.js'
-        / = javascript_include_tag 'book.js'
-        / = javascript_include_tag 'alerts.js'
-        / = javascript_include_tag 'trip.js'
-        / = javascript_include_tag 'message.js'
-        / = javascript_include_tag 'tinymce.js'
-        / = javascript_include_tag 'add_test.js'
-        / = javascript_include_tag 'search.js'
-        / = javascript_include_tag 'dashboards.js'
-        / = javascript_include_tag 'main.js'
+        /- if Padrino.env == :production
+        /= javascript_include_tag 'mini/main.min.js'
+        /- else
+        = javascript_include_tag 'finance.js'
+        = javascript_include_tag 'book.js'
+        = javascript_include_tag 'alerts.js'
+        = javascript_include_tag 'trip.js'
+        = javascript_include_tag 'message.js'
+        = javascript_include_tag 'tinymce.js'
+        = javascript_include_tag 'add_test.js'
+        = javascript_include_tag 'search.js'
+        = javascript_include_tag 'dashboards.js'
+        = javascript_include_tag 'main.js'

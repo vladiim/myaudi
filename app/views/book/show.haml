@@ -1,14 +1,23 @@
-%ul{ class: 'nav nav-tabs', role: 'tablist' }
-  %li{ class: 'active' }
-    %a 1. Date
-  %li
-    %a 2. Time
-  %li
-    %a 3. Details
+- if @type == 'Event'
+  %ul{ class: 'nav nav-tabs', role: 'tablist' }
+    %li{ class: 'active' }
+      %a 1. Confirm
+    %li
+      %a 2. Details
+- else
+  %ul{ class: 'nav nav-tabs', role: 'tablist' }
+    %li{ class: 'active' }
+      %a 1. Date
+    %li
+      %a 2. Time
+    %li
+      %a 3. Details
 
 %h2 Make a booking
 
 - if @type == 'Service'
   = partial '/book/service.haml'
+- elsif @type == 'Event'
+  = partial '/book/event'
 - else # test-drive or anything else
   = partial '/book/test_drive.haml'
