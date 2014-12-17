@@ -1,6 +1,6 @@
 tinymce.initOptions = ->
   tinymce.init
-    selector: 'textarea'
+    selector: 'textarea#wysiwyg'
     menubar: false
     plugins: ['link image table hr']
     toolbar1: 'bold italic underline | alignleft aligncenter alignright'

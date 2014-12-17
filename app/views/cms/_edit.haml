@@ -9,6 +9,8 @@
           %a{ class: 'placard-cancel', href: '#' } Cancel
           %button{ class: 'btn btn-primary btn-xs placard-accept', type: 'button' } Save
 
+      %a{ href: '#', id: 'version-action', 'data-toggle' => 'modal', 'data-target' => '#version' } V2.1
+
       %div{ class: 'btn-group selectlist selectlist-cms-title', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
         %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
           %span.selected-label
@@ -16,7 +18,7 @@
         %ul{ class: 'dropdown-menu', role: 'menu'}
           %li{ 'data-value' => "#{ content.type }"}
             %a{ href: '#' }= content.type
-          - types = [ 'Article', 'User', 'Event' ].reject { |t| t == content.type }
+          - types = [ 'Article', 'User', 'Event', 'Banner', 'Model', 'Promotion' ].reject { |t| t == content.type }
           - types.each do |type|
             %li{ 'data-value' => "#{ type }" }
               %a{ href: '#' }= type
@@ -24,7 +26,7 @@
       %form{ role: 'form', class: 'form-lg' }
         .form-group
           - if content.type == 'Article'
-            %textarea{ class: 'form-control', rows: 10 }
+            %textarea{ id: 'wysiwyg', class: 'form-control', rows: 10 }
 
           - elsif content.type == 'User'
             = partial 'cms/user_form'
@@ -33,7 +35,7 @@
             = partial 'cms/event_form'
 
     .col-xs-2.cms-actions
-      - [ 'info-sign', 'flag', 'save', 'comment', 'stats', 'screenshot' ].each do |action|
+      - [ 'save', 'info-sign', 'comment', 'stats', 'screenshot' ].each do |action|
         %a{ class: 'btn btn-default', id: "#{ action }-action", 'data-toggle' => 'modal', 'data-target' => "##{ action }" }
           %span{ class: "glyphicon glyphicon-#{ action }" }
 

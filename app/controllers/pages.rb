@@ -15,4 +15,12 @@ Myaudi::App.controllers :pages do
   get :owners_leaderboard, map: '/pages/owners_leaderboard' do
     render '/pages/owners_leaderboard'
   end
+
+  get :forgot_password, map: '/pages/forgot_password' do
+    render '/pages/forgot_password'
+  end
+
+  get :analytics_email, map: '/pages/analytics_email' do
+    render '/pages/analytics_email'
+  end
 end

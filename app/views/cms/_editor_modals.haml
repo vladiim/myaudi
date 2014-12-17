@@ -1,3 +1,32 @@
+%div{ id: 'version', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title Version
+      .modal-body.version-list
+        %ul
+          %li
+            %a V2.0:
+            Content approved by
+            %a Josh
+            %small 25th Nov 2014.
+          %li
+            %a V2.0:
+            Content verified by
+            %a Justine
+            %small 15th Nov 2014.
+          %li
+            %a V1.0:
+            Content edited by
+            %a Sam
+            %small 05th Nov 2014.
+          %li
+            %a V0.1:
+            Content created by
+            %a Nathan
+            %small 02nd Nov 2014.
+
 %div{ id: 'info-sign', class: 'modal fade', tabindex: '-1', role: 'dialog' }
   .modal-dialog
     .modal-content
@@ -7,14 +36,29 @@
       .modal-body
         %form{ role: 'form' }
           .form-group
+            %label Description
+            %textarea{ class: 'form-control', placeholder: 'Short description', rows: '2' }
+          .form-group
+            %label Search terms
+            .pillbox
+              %ul.clearfix.pill-group
+                - ['Audi', 'Cookie'].each do |term|
+                  %li{ class: 'btn btn-default pill', 'data-value' => 'foo' }
+                    %span= term
+                    %span.glyphicon.glyphicon-close
+
+          .form-group
             %label Publish date
             %input{ type: 'date', class: 'form-control' }
           .form-group
-            %label Action
+            %label Author
+            %input{ type: 'text', class: 'form-control', value: 'Josh Boyden' }
+          .form-group
+            %label Next step
             %select.form-control
-              %option Produce
-              %option Approve
-              %option Edit
+              - ['Additional editing', 'Verification', 'Approval', 'Publishing'].each do |step|
+                %option= step
+        %form
           .form-group
             %label Responsible
             %input{ type: 'text', class: 'form-control typeahead staff-search', placeholder: 'Admin responsible' }
@@ -71,7 +115,7 @@
         %table.table.table-striped
           %thead
             %tr
-              %th Stat
+              %th Metric
               %th Original
               %th Test A
           %tbody
@@ -81,7 +125,8 @@
                   %b= stat
                 %td= (10..100).to_a.sample
                 %td= (10..100).to_a.sample
-
+        %hr
+        %a.btn.btn-default.btn-100 View detailed statistics
 
 
 
@@ -97,6 +142,8 @@
             %input{ type: 'text', value: '100%' }
           .col-xs-9
             %a{ class: 'btn btn-default btn-100' } Original
+          .col-xs-12
+            %a Stop test
         .row.add_test
           .col-xs-12
             %a{ class: 'btn btn-success btn-100 btn-add-test' }

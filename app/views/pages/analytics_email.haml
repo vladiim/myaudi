@@ -1,0 +1,20 @@
+- ['Daily', 'Weekly', 'Monthly', 'Annual'].each do |date|
+  %h4= date
+
+  %table.table.table-striped
+    %thead
+      %trow
+        %th Metric
+        %th Total
+        %th Growth
+    %tbody
+      %tr
+        %td Market position
+        %td 3
+        %td 0%
+      - ['Sales', 'Engagement', 'Prospects', 'Leads'].each do |metric|
+        %tr
+          %td= metric
+          %td 10,000
+          %td 20%
+  %hr

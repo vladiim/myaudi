@@ -19,31 +19,3 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       %td 3 year comprehensive
       %td $2,500
       %th= link_to 'Upgrade', class: 'btn btn-default'
-
-%a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Upgrade
-
-%div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' }
-          %span{ 'aria-hidden' => 'true' } &times;
-          %span.sr-only Close
-        %h4.modal-title Login/Sign up
-      .modal-body
-        .row
-          .col-md-6
-            %h4 Login
-            %br
-
-            = form_tag '/sessions/create' do
-              = field_set_tag do
-                .form-group
-                  = label_tag :email, for: 'email'
-                  = email_field_tag :email, class: 'form-control', placeholder: 'Enter email'
-                .form-group
-                  = label_tag :password, for: 'password'
-                  = password_field_tag :password, class: 'form-control', placeholder: 'Enter password'
-              = field_set_tag( class: 'buttons' ) do
-                = submit_tag "Login", class: 'btn btn-primary'
-              %a{ href: '/forgot-password' } Forgot password?

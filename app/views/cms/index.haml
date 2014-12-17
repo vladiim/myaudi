@@ -11,6 +11,10 @@
         %a{ href: '#' } Newest
       %li
         %a{ href: '#' } Due date
+      %li
+        %a{ href: '#' } Published
+      %li
+        %a{ href: '#' } All
 
   %li{ role: 'presentation' }
     %a{ href: '#', class: 'dropdown-toggle btn btn-default', 'data-toggle' => 'dropdown', role: 'button', 'aria-expanded' => 'false' }
@@ -23,6 +27,12 @@
         %a{ href: '#' } Events
       %li
         %a{ href: '#' } Users
+      %li
+        %a{ href: '#' } Banners
+      %li
+        %a{ href: '#' } Models
+      %li
+        %a{ href: '#' } Promotion
 
   %li{ role: 'presentation' }
     %a{ class: 'btn btn-default right-align', href: 'cms/new' }
@@ -33,3 +43,5 @@
       %span{ class: 'glyphicon glyphicon-search' }
 
 = partial 'cms/item', collection: content_list
+
+%hr

@@ -13,7 +13,11 @@ Myaudi::App.controllers :cars do
     end
   end
 
-  get '/cars/:model/warranty' do
+  get '/:model/warranty' do
     render '/cars/warranty'
+  end
+
+  get '/:model/resale' do
+    render '/cars/resale'
   end
 end
