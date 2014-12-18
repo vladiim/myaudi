@@ -30,7 +30,7 @@ class User
 
   def authenticate(username)
     users.each do |user|
-      return user if username == user.name || username == user.name.downcase# && password == user.password
+      return user if username == user.name || username.downcase == user.name.downcase# && password == user.password
     end
     false
   end
@@ -64,7 +64,7 @@ class User
     user.surname = "Mansfield"
     user.email = ENV['TRENT_E']
     user.password = ENV['TRENT_P']
-    user.car = 'A5 Sportsback'
+    user.car = 'RS4'
     user.grade = 'B+'
     user.trips = '200'
     user
@@ -77,7 +77,7 @@ class User
     user.surname = "Long"
     user.email = ENV['MARK_E']
     user.password = ENV['MARK_P']
-    user.car = 'A5 Sportsback'
+    user.car = 'A5 Sportback'
     user
   end
 
