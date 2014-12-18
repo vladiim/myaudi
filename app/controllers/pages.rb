@@ -23,4 +23,8 @@ Myaudi::App.controllers :pages do
   get :analytics_email, map: '/pages/analytics_email' do
     render '/pages/analytics_email'
   end
+
+  get :login, map: '/login' do
+    render '/pages/login'
+  end
 end

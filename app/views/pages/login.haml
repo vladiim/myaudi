@@ -1,0 +1,10 @@
+%h3 Prototype login
+
+= form_tag '/sessions/create' do
+  = field_set_tag do
+    .form-group
+      = label_tag :username, for: 'username'
+      = text_field_tag :username, class: 'form-control', placeholder: 'Enter username'
+
+  = field_set_tag( class: 'buttons' ) do
+    = submit_tag "Login", class: 'btn btn-primary btn-100 btn-lg'

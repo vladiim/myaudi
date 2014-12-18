@@ -6,8 +6,9 @@ Myaudi::App.controllers :sessions do
 
   post :create, map: 'sessions/create' do
     user = User.new
-    current_user = user.authenticate(params[:email], params[:password])
-    redirect '/sessions/fail' if !current_user
+    # current_user = user.authenticate(params[:email], params[:password])
+    current_user = user.authenticate(params[:username])
+    redirect '/login' if !current_user
     env['warden'].set_user(current_user)
     redirect '/'
   end

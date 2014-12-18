@@ -38,7 +38,8 @@
 
           - if @user.null?
             %li
-              %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
+              / %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
+              %a{ href: '/login' } Login
           - else
             = partial 'shared/nav_dropdown', locals: { title: @user.name, elements: { two: ['Profile', '/profile'], three: ['Messages', '/messages'], four: ['Logout', '/logout'] } }
 

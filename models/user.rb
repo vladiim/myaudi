@@ -28,9 +28,9 @@ class User
     false
   end
 
-  def authenticate(username, password)
+  def authenticate(username)
     users.each do |user|
-      return user if username == user.email && password == user.password
+      return user if username == user.name || username == user.name.downcase# && password == user.password
     end
     false
   end
@@ -40,7 +40,7 @@ class User
   end
 
   def admin?
-    self.name == 'Nathan'
+    self.name == 'Angie'
   end
 
   def mark?
@@ -84,7 +84,7 @@ class User
   def audi_admin
     user = User.new
     user.id = 1
-    user.name = 'Nathan'
+    user.name = 'Angie'
     user.surname = ""
     user.email = ENV['AUDI_ADMIN_E']
     user.password = ENV['AUDI_ADMIN_P']
