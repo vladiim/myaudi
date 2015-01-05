@@ -34,6 +34,13 @@ span.old {
   text-decoration: line-through;
 }
 
+.finance-calculator {
+  .glyphicon {
+    font-size: 60%;
+    margin-left: -7.5px;
+  }
+}
+
 .finance-calculator-form, #time-form, #details-form, #finalise-booking {
   top: 0;
   left: 0;

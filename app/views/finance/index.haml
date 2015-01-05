@@ -7,7 +7,31 @@
   .row
     .span-sm-6
       %h3
-        I'm interested in an <a class="finance-calculator" data-type="model" href="#">A1</span></a>, <a class="finance-calculator" data-type="variant" data-value="Sportsback" href="#">Sportsback</a>, I live in <a class="finance-calculator" data-type="suburb" href="#">2000</a>, I'm purchasing for <a class="finance-calculator" data-type="use" href="#">Personal</a> use, Estimate <a class="finance-calculator" data-type="interest" href="#">5</span></a>% interest, Over <a class="finance-calculator" data-type="years" href="#">4</span></a> years.
+        I'm interested in an
+        %a{ class: 'finance-calculator', 'data-type' => 'model', href: '#' }
+          A1
+          %span.glyphicon.glyphicon-pencil
+        ,
+        %a{ class: 'finance-calculator', 'data-type' => 'variant', 'data-value' => 'Sportback', href: '#' }
+          Sportback
+          %span.glyphicon.glyphicon-pencil
+        , I live in
+        %a{ class: 'finance-calculator', 'data-type' => 'suburb', href: '#' }
+          2000
+          %span.glyphicon.glyphicon-pencil
+        , I'm purchasing for 
+        %a{ class: 'finance-calculator', 'data-type' => 'use', href: '#' }
+          Personal
+          %span.glyphicon.glyphicon-pencil
+        use, Estimate 
+        %a{ class: 'finance-calculator', 'data-type' => 'interest', href: '#' }
+          5
+          %span.glyphicon.glyphicon-pencil
+        = "% interest, Over"
+        %a{ class: 'finance-calculator', 'data-type' => 'years', href: '#' }
+          4
+          %span.glyphicon.glyphicon-pencil
+        years.
 
     %hr
 
