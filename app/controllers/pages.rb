@@ -28,7 +28,6 @@ Myaudi::App.controllers :pages do
     render '/pages/register_car'
   end
 
-
   get :register_car_onboarding, map: '/pages/register-car-onboarding' do
     @drivers = Driver.all
     @model = 'rs4'

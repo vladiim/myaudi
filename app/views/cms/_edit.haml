@@ -23,6 +23,18 @@
             %li{ 'data-value' => "#{ type }" }
               %a{ href: '#' }= type
 
+      %div{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+        %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+          %span.selected-label
+          %span.caret
+        %ul{ class: 'dropdown-menu', role: 'menu'}
+          %li{ 'data-value' => 'All'}
+            %a{ href: '#' } All
+          - types = [ 'A1', 'A3', 'A4', 'A5', 'A6', 'etc...' ].reject { |t| t == content.type }
+          - types.each do |type|
+            %li{ 'data-value' => "#{ type }" }
+              %a{ href: '#' }= type
+
       %form{ role: 'form', class: 'form-lg' }
         .form-group
           - if content.type == 'Article'
