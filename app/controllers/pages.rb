@@ -28,6 +28,15 @@ Myaudi::App.controllers :pages do
     render '/pages/register_car'
   end
 
+
+  get :register_car_onboarding, map: '/pages/register-car-onboarding' do
+    @drivers = Driver.all
+    @model = 'rs4'
+    @grades = ['A+ maintaining', 'B- braking', 'B cornering', 'C fuel efficiency', 'A+ acceleration']
+    @trips = Trip.all
+    render '/pages/register_car_onboarding'
+  end
+
   get :services, map: '/pages/services' do
     render '/pages/services'
   end
