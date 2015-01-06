@@ -27,4 +27,9 @@ Myaudi::App.controllers :pages do
   get :login, map: '/login' do
     render '/pages/login'
   end
+
+  get :register_car, map: '/pages/register_car' do
+    render '/pages/register_car'
+  end
+
 end

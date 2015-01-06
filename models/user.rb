@@ -3,6 +3,10 @@ class NullUser
     0
   end
 
+  def mark?
+    false
+  end
+
   def trent?
     false
   end

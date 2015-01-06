@@ -1,0 +1,83 @@
+%div{ class: 'navbar navbar-default', role: 'navigation' }
+  .container-fluid
+    .navbar-header
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-car2' }
+        %span.glyphicon.glyphicon-road
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-profile' }
+        %span.glyphicon.glyphicon-user
+
+      %button{ type: 'button', class: 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse' }
+        %span.sr-only
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      %a{ class: 'navbar-brand', href: '/' } myAudi
+
+    %div{ class: 'collapse navbar-collapse', id: 'navbar-collapse' }
+      %div.nav-standard
+
+    %div{ class: 'collapse navbar-profile', id: 'navbar-profile' }
+      %div.nav-standard
+
+    %div{ class: 'collapse navbar-car2', id: 'navbar-car2' }
+      %div.nav-standard
+        %h3 Register car
+        %form.form
+          .form-group
+            %label The car's VIN
+            %input{ class: 'form-control', placeholder: "Enter the car's VIN" }
+
+          .form-group
+            %label First name
+            %input{ class: 'form-control', placeholder: "Enter your first name" }
+
+          .form-group
+            %label Email
+            %input{ class: 'form-control', placeholder: "Enter your email" }
+
+          .form-group
+            %label Password
+            %input{ class: 'form-control', placeholder: "Enter a password" }
+
+          .form-group
+            %label Confirm password
+            %input{ class: 'form-control', placeholder: "Confirm your password" }
+
+          = link_to 'Register car', class: 'btn btn-default btn-100'
+
+%div{ class: 'navbar navbar-default', role: 'navigation' }
+  .container-fluid
+    .navbar-header
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-car3' }
+        %span.glyphicon.glyphicon-road
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-profile' }
+        %span.glyphicon.glyphicon-user
+
+      %button{ type: 'button', class: 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse' }
+        %span.sr-only
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      %a{ class: 'navbar-brand', href: '/' } myAudi
+
+    %div{ class: 'collapse navbar-collapse', id: 'navbar-collapse' }
+      %div.nav-standard
+
+    %div{ class: 'collapse navbar-profile', id: 'navbar-profile' }
+      %div.nav-standard
+
+    %div{ class: 'collapse navbar-car3', id: 'navbar-car3' }
+      %div.nav-standard
+        %h3 Register car
+        %p This car already has an owner, would you like to:
+        %label Message
+        %input{ class: 'form-control', placeholder: 'Add any message to the owner/Audi here' }
+        %br
+        %a{ class: 'btn btn-default btn-100' } Be added as a driver
+        %a{ class: 'btn btn-primary btn-100' } Claim ownership

@@ -3,19 +3,29 @@
 %nav{ class: 'navbar navbar-default navbar-fixed-top', role: 'navigation' }
   .container-fluid
     .navbar-header
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-car' }
+        %span.glyphicon.glyphicon-road
+
+      %button{ type: 'button', class: 'navbar-toggle glyphicon', 'data-toggle' => 'collapse', 'data-target' => '#navbar-profile' }
+        %span.glyphicon.glyphicon-user
+
       %button{ type: 'button', class: 'navbar-toggle', 'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse' }
         %span.sr-only
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
+
       %a{ class: 'navbar-brand', href: '/' } myAudi
 
     %div{ class: 'collapse navbar-collapse', id: 'navbar-collapse' }
-
       = partial 'shared/nav_search'
 
       %div.nav-standard
         %ul{ class: 'nav navbar-nav' }
+
+          - if @user.admin?
+            = partial 'shared/nav_dropdown', locals: { title: 'Admin', elements: { one: ['Dashboard', '/dashboards'], two: ['CMS', '/cms'] } }
 
           %li
             %a{ href: '/articles' } Articles
@@ -29,19 +39,96 @@
             %a{ href: '/finance' } Finance calculator
 
         %ul{ class: 'nav navbar-nav navbar-right' }
-
           %li
             %a{ class: 'nav-search', href: '/search' } Search
 
-          - if @user.admin?
-            = partial 'shared/nav_dropdown', locals: { title: 'Admin', elements: { one: ['Dashboard', '/dashboards'], two: ['CMS', '/cms'] } }
-
+    %div{ class: 'collapse navbar-profile', id: 'navbar-profile' }
+      %div.nav-standard
+        %ul{ class: 'nav navbar-nav' }
           - if @user.null?
             %li
-              / %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginSignup' } Login/Sign up
               %a{ href: '/login' } Login
+            %li
+              %a{ href: '/login' } Sign up
+
           - else
-            = partial 'shared/nav_dropdown', locals: { title: @user.name, elements: { two: ['Profile', '/profile'], three: ['Messages', '/messages'], four: ['Logout', '/logout'] } }
+            %li
+              %a{ href: '/profile' } Profile
+            %li
+              %a{ href: '/messages' }
+                Messages
+                %span.badge 3
+            %li
+              %a{ href: '#' } Driver ranking
+            %li
+              %a{ href: '#' } Feedback
+            %li
+              %a{ href: '/logout' } Logout
+
+    %div{ class: 'collapse navbar-car', id: 'navbar-car' }
+      %div.nav-standard
+        %ul{ class: 'nav navbar-nav' }
+
+          - if @user.mark?
+            %li
+              %a{ href: '/cars/locator' } Locate Your A4 Avant
+            %li
+              %a{ href: '#' } Register car
+
+          - elsif @user.trent?
+            %li
+              %a{ href: '/cars/rs4' } RS4
+            %li
+              %a{ href: '#' } RS4 Manual
+            %li
+              %a{ href: '/services' } Services
+            %li
+              %a{ href: '#' } Trips
+            %li
+              %a{ href: '#' } Register car
+
+          - elsif @user.admin?
+
+            %li.dropdown
+              %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
+                A4 Avant (2014)
+                %span.caret
+              %ul{ class: 'dropdown-menu', role: 'menu' }
+                %li
+                  %a View
+                %li
+                  %a Manual
+
+            %li.dropdown
+              %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
+                A4 Avant (2012)
+                %span.caret
+              %ul{ class: 'dropdown-menu', role: 'menu' }
+                %li
+                  %a View
+                %li
+                  %a Manual
+
+            %li.dropdown
+              %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
+                A4 Avant (2012) 2
+                %span.caret
+              %ul{ class: 'dropdown-menu', role: 'menu' }
+                %li
+                  %a View
+                %li
+                  %a Manual
+
+            %li
+              %a{ href: '/services' } Services
+            %li
+              %a{ href: '#' } Trips
+            %li
+              %a{ href: '#' } Register car
+
+          - else
+            %li
+              %a{ href: '#' } Register car
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog
