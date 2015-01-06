@@ -83,6 +83,8 @@
             %li
               %a{ href: '/cars/rs4/ownership' } RS4 Ownership
             %li
+              %a{ href: '#', 'data-toggle' => 'modal', 'data-target' => '#addDriver' } Add driver
+            %li
               %a{ href: '/pages/services' } Services
             %li
               %a{ href: '/pages/trips' } Trips
@@ -102,6 +104,8 @@
                   %a Manual
                 %li
                   %a Ownership
+                %li
+                  %a Add driver
 
             %li.dropdown
               %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
@@ -114,6 +118,8 @@
                   %a Manual
                 %li
                   %a Ownership
+                %li
+                  %a Add driver
 
             %li.dropdown
               %a{ href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
@@ -126,6 +132,8 @@
                   %a Manual
                 %li
                   %a Ownership
+                %li
+                  %a Add driver
 
             %li
               %a{ href: '/pages/services' } Services
@@ -137,6 +145,25 @@
           - else
             %li
               %a{ href: '#' } Register car
+
+%div{ class: 'modal fade', id: 'addDriver', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'addDriver', 'aria-hidden' => 'true' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' }
+          %span{ 'aria-hidden' => 'true' } &times;
+          %span.sr-only Close
+        %h4.modal-title Add driver to your RS4
+      .modal-body
+        %p Allow this driver to see and manage
+        - ['Everything', 'Grades', 'Services', 'Trips', 'Ownership' ].each do |opt|
+          .checkbox
+            %label{ class: 'checkbox-custom', 'data-initialize' => 'checkbox' }
+              %input{ type: 'checkbox', value: '', class: 'sr-only' }
+              %span.checkbox-label= opt
+        %label Driver's email
+        %input.form-control
+        = link_to 'Add driver', class: 'btn btn-default btn-100'
 
 %div{ class: 'modal fade', id: 'loginSignup', tabindex: '-1', role: 'dialog', 'aria-labelledby' => 'LoginSignup', 'aria-hidden' => 'true' }
   .modal-dialog

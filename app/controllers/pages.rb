@@ -48,4 +48,9 @@ Myaudi::App.controllers :pages do
     @drivers = Driver.all
     render '/pages/driver_ranking'
   end
+
+  get :trips, map: '/pages/trips' do
+    @trips = Trip.all
+    render '/pages/trips'
+  end
 end
