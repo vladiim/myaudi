@@ -3,6 +3,11 @@
 %hr
 
 .list-group
+  %a{ class: 'list-group-item', href: '/services/2014/10/12' }
+    %small= '10th February 2015'
+    %h4 Next Service: 100,000km
+    %p 6 items | est $1,000
+    = link_to 'Book service', class: 'btn btn-default btn-100'
   - @service = OpenStruct.new(name: 'Basic service', items: '3', cost: '$849.00', date: '12th Oct 2014')
   - 10.times do
     %a{ class: 'list-group-item', href: '/services/2014/10/12' }

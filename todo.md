@@ -1,10 +1,4 @@
-* /feedback page
-
-* /driver-ranking page
-
-* /trips
-
-* /services
+* Competition or event manual
 
 * /manual
 

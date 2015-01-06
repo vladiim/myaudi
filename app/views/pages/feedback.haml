@@ -1,0 +1,37 @@
+%h3 Feedback
+
+%p Let us know your feedback.
+
+%form.form
+
+  .form-group
+    %label Email
+    %input.form-control
+
+  .form-group.rating
+    .row
+      .col-xs-5.text
+        %label Rate Audi
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+
+  .form-group.rating
+    .row
+      .col-xs-5.text
+        %label Rate website
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+      .col-xs-2
+        %span.glyphicon.glyphicon-star-empty
+
+  .form-group
+    %label Comments
+    %textarea.form-control
+
+  = link_to 'Send feedback', class: 'btn btn-default btn-100'

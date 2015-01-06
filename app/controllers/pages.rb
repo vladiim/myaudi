@@ -12,10 +12,6 @@ Myaudi::App.controllers :pages do
     render '/pages/home_welcome'
   end
 
-  get :owners_leaderboard, map: '/pages/owners_leaderboard' do
-    render '/pages/owners_leaderboard'
-  end
-
   get :forgot_password, map: '/pages/forgot_password' do
     render '/pages/forgot_password'
   end
@@ -32,4 +28,16 @@ Myaudi::App.controllers :pages do
     render '/pages/register_car'
   end
 
+  get :services, map: '/pages/services' do
+    render '/pages/services'
+  end
+
+  get :feedback, map: '/pages/feedback' do
+    render '/pages/feedback'
+  end
+
+  get :driver_ranking, map: '/pages/driver-ranking' do
+    @drivers = Driver.all
+    render '/pages/driver_ranking'
+  end
 end

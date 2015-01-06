@@ -1,0 +1,31 @@
+.col-xs-6
+  %h4 Filter by
+  .btn-group.selectlist{ 'data-initialize' => 'selectlist', id: 'date' }
+    %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown' }
+      %span.selected-label
+      %span.caret
+    %ul{ class: 'dropdown-menu', role: 'menu' }
+      %li
+        %a Newest
+      %li
+        %a Oldest
+      %li
+        %a Cheapest
+      %li
+        %a Most expensive
+
+.col-xs-6
+  %h4 Models
+  .btn-group.selectlist{ 'data-initialize' => 'selectlist', id: 'date' }
+    %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown' }
+      %span.selected-label
+      %span.caret
+    %ul{ class: 'dropdown-menu', role: 'menu' }
+      %li
+        %a All models
+      %li
+        %a A4 Avant
+      %li
+        %a A8
+
+= partial 'cars/services'

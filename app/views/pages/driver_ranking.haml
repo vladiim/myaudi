@@ -1,0 +1,34 @@
+.col-xs-6
+  %h4 Filter by
+  .btn-group.selectlist{ 'data-initialize' => 'selectlist', id: 'date' }
+    %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown' }
+      %span.selected-label
+      %span.caret
+    %ul{ class: 'dropdown-menu', role: 'menu' }
+      %li
+        %a Highest
+      %li
+        %a Lowest
+      %li
+        %a Most trips
+      %li
+        %a Least trips
+
+.col-xs-6
+  %h4 Models
+  .btn-group.selectlist{ 'data-initialize' => 'selectlist', id: 'date' }
+    %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown' }
+      %span.selected-label
+      %span.caret
+    %ul{ class: 'dropdown-menu', role: 'menu' }
+      %li
+        %a All models
+      %li
+        %a A4 Avant
+      %li
+        %a A8
+
+
+= link_to 'Join the driver rankings', class: 'btn btn-default btn-100'
+
+= partial '/cars/place'

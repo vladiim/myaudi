@@ -231,6 +231,11 @@ span.old {
 footer {
   margin-bottom: 20px; }
 
+.rating .text {
+  text-align: right; }
+.rating .glyphicon-star-empty {
+  font-size: 150%; }
+
 .panel {
   margin-bottom: 0px; }
 
