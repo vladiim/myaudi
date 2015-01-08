@@ -1,0 +1,57 @@
+%h3 Add an admin user
+
+%form.form
+  .col-xs-6
+    %label Name
+    %input.form-control{ placeholder: 'Enter their first name' }
+
+  .col-xs-6
+    %label Surname
+    %input.form-control{ placeholder: 'Enter their last name' }
+
+  .col-xs-6
+    %label Email
+    %input.form-control{ placeholder: 'Enter their email' }
+
+  .col-xs-6
+    %label Mobile
+    %input.form-control{ placeholder: 'Enter their mobile' }
+
+  .col-xs-12
+    = link_to 'Profile pic', class: 'btn btn-default btn-100'
+
+  .col-xs-6
+    %label Admin type
+    %div{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+      %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+        %span.selected-label
+        %span.caret
+      %ul{ class: 'dropdown-menu', role: 'menu'}
+        - types = [ 'Audi', 'Dealership', 'Agency' ]
+        - types.each do |type|
+          %li{ 'data-value' => "#{ type }" }
+            %a{ href: '#' }= type
+
+  .col-xs-6
+    %label Permissions
+    %div{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+      %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+        %span.selected-label
+        %span.caret
+      %ul{ class: 'dropdown-menu', role: 'menu'}
+        - types = [ 'Writer', 'Super admin', 'Admin', 'Editor' ]
+        - types.each do |type|
+          %li{ 'data-value' => "#{ type }" }
+            %a{ href: '#' }= type
+
+  .col-xs-12
+    %label Which dealership?
+    %div{ class: 'btn-group selectlist', 'data-resize' => 'auto', 'data-initialize' => 'selectlist'}
+      %button{ class: 'btn btn-default dropdown-toggle', 'data-toggle' => 'dropdown', type: 'button'}
+        %span.selected-label
+        %span.caret
+      %ul{ class: 'dropdown-menu', role: 'menu'}
+        - types = [ 'Audi Centre Townsville', 'Admin', 'Editor', 'Writer' ]
+        - types.each do |type|
+          %li{ 'data-value' => "#{ type }" }
+            %a{ href: '#' }= type

@@ -1,0 +1,50 @@
+
+%a{ class: 'btn btn-default', 'data-toggle' => 'modal', 'data-target' => "#event" } Event
+
+%div{ id: 'event', class: 'modal fade', tabindex: '-1', role: 'dialog' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ type: 'button', class: 'close', 'data-dismiss' => 'modal' } &times;
+        %h3.modal-title Content information
+      .modal-body
+        %form{ role: 'form' }
+          .form-group
+            %label Description
+            %textarea{ class: 'form-control', placeholder: 'Short description', rows: '2' }
+          .form-group
+            %label Search terms
+            .pillbox
+              %ul.clearfix.pill-group
+                - ['Audi', 'Cookie'].each do |term|
+                  %li{ class: 'btn btn-default pill', 'data-value' => 'foo' }
+                    %span= term
+                    %span.glyphicon.glyphicon-close
+
+          .form-group
+            %label Date of event
+            %input.form-control
+
+          .form-group
+            %label Address of event
+            %input.form-control
+
+          .form-group
+            %label Publish date
+            %input{ type: 'date', class: 'form-control' }
+          .form-group
+            %label Author
+            %input{ type: 'text', class: 'form-control', value: 'Josh Boyden' }
+          .form-group
+            %label Next step
+            %select.form-control
+              - ['Additional editing', 'Verification', 'Approval', 'Publishing'].each do |step|
+                %option= step
+        %form
+          .form-group
+            %label Responsible
+            %input{ type: 'text', class: 'form-control typeahead staff-search', placeholder: 'Admin responsible' }
+
+      .modal-footer
+        %a{ class: 'btn btn-default pull-left', 'data-dismiss' => 'modal' } Close
+        %a{ class: 'btn btn-primary', 'data-dismiss' => 'modal' } Save

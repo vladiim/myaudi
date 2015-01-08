@@ -347,6 +347,21 @@ footer {
   }
 }
 
+.media-images {
+  margin-top: 15px;
+
+  .col-xs-3 {
+    padding: 0;
+    margin: 7.5px;
+
+    .glyphicon-pencil {
+      position: absolute;
+      margin: -2.5px 0 0 65px;
+    }
+  }
+}
+
+
 
 
 

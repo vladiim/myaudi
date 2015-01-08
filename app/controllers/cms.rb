@@ -13,4 +13,12 @@ Myaudi::App.controllers :cms do
     content = NullContent.new
     render '/cms/new', locals: { content: content }
   end
+
+  get :user, map: '/cms/user' do
+    render '/cms/user'
+  end
+
+  get :event, map: '/cms/event' do
+    render '/cms/event'
+  end
 end

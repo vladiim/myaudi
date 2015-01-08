@@ -1,0 +1,39 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Edit media
+
+  .panel-body
+    .row
+
+      .col-xs-8
+        %label Title
+        %input.form-control{ placeholder: 'Add image title' }
+        %br
+        %img{ 'data-src' => 'holder.js/200x200' }
+
+        %br
+
+        %label Image filename
+        %input.form-control{ placeholder: 'Add image filename' }
+
+        %label Image caption
+        %input.form-control{ placeholder: 'Add image caption' }
+
+        %label Add media tags
+        .pillbox
+          %ul.clearfix.pill-group
+            - ['Audi', 'Cookie'].each do |term|
+              %li{ class: 'btn btn-default pill', 'data-value' => 'foo' }
+                %span= term
+                %span.glyphicon.glyphicon-close
+
+      .col-xs-4
+        %label Icon 75x75
+        %img{ 'data-src' => 'holder.js/75x75/' }
+        %label List 100x50
+        %img{ 'data-src' => 'holder.js/75x75/' }
+        %label Hero 750x500
+        %img{ 'data-src' => 'holder.js/75x75/sky' }
+
+    %hr
+    = link_to 'Save', class: 'btn btn-default btn-100'

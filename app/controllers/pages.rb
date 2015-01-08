@@ -53,4 +53,16 @@ Myaudi::App.controllers :pages do
     @trips = Trip.all
     render '/pages/trips'
   end
+
+  get :media, map: '/pages/media' do
+    render '/pages/media'
+  end
+
+  get :media_add, map: '/pages/media-add' do
+    render '/pages/media_add'
+  end
+
+  get :media_edit, map: '/pages/media-edit' do
+    render '/pages/media_edit'
+  end
 end
