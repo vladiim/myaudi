@@ -12,8 +12,11 @@
   %a{ href: 'cars/rs4/warranty'} 2 years
   on your warranty
 
-%ul{ class: 'nav nav-tabs nav-car', role: 'tablist' }
+%ul{ class: 'nav nav-tabs nav-car', role: 'tablist', id: 'car-tabs' }
   %li.active
+    %a{ href: '#activity', role: 'tab', 'data-toggle' => 'tab', id: 'activity-tab' }
+      %h4 Activity
+  %li
     %a{ href: '#grade', role: 'tab', 'data-toggle' => 'tab', id: 'grade-tab' }
       %h4 A-
       %small grade
@@ -31,7 +34,9 @@
       %small services
 
 .tab-content
-  %div{ class: 'tab-pane active', id: 'grade' }
+  %div{ class: 'tab-pane active', id: 'activity' }
+    = partial '/cars/activity'
+  .tab-pane#grade
     = partial '/cars/grade'
   .tab-pane#place
     = partial '/cars/place'

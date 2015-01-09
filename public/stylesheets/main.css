@@ -245,6 +245,9 @@ footer {
       position: absolute;
       margin: -2.5px 0 0 65px; }
 
+#car-tabs li > a {
+  padding: 5px 10px; }
+
 .panel {
   margin-bottom: 0px; }
 
